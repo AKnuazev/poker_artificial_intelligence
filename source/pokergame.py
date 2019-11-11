@@ -9,22 +9,93 @@ players_number = 2
 
 
 def check_royal_flush(hand):
-    sorted_hand = sorted(hand, reverse=True)
-    flag = True
-    current_value = 14  # Ace value
+    sorted_hand = sorted(hand)
+    current_value = 10  # 10 value
     current_suit = hand[0].cards[0].suit
     in_a_row_counter = 0
 
     for card in sorted_hand:
         if card.suit == current_suit and card.value == current_value:
-            current_value -= 1
+            current_value += 1
             in_a_row_counter += 1
         else:
             current_suit = card.suit
+            current_value = card.value
             in_a_row_counter = 0
 
     if in_a_row_counter > 4:
         print('Royal Flush')
+        return 1
+
+    return 0
+
+
+def check_straight_flush(hand):
+    sorted_hand = sorted(hand)
+
+    current_value = hand[0].cards[0].value
+    current_suit = hand[0].cards[0].suit
+    in_a_row_counter = 0
+
+    for card in sorted_hand:
+        if card.suit == current_suit and card.value == current_value:
+            current_value += 1
+            in_a_row_counter += 1
+        else:
+            current_suit = card.suit
+            current_value = card.value
+            in_a_row_counter = 0
+
+    if in_a_row_counter > 4:
+        print('Straight Flush')
+        return 1
+
+    return 0
+
+
+def check_four(hand):
+    sorted_hand = sorted(hand)
+
+    current_value = hand[0].cards[0].value
+    current_suit = hand[0].cards[0].suit
+    same_cards_counter = 0
+
+    for card in sorted_hand:
+        if card.value == current_value:
+            current_value += 1
+            same_cards_counter += 1
+        else:
+            current_value = card.value
+            same_cards_counter = 0
+
+    if same_cards_counter == 4:
+        print('Four of a kind')
+        return 1
+
+    return 0
+
+
+def check_full_house(hand):
+    sorted_hand = sorted(hand)
+
+    current_value = hand[0].cards[0].value
+    current_suit = hand[0].cards[0].suit
+    same_cards_counter = 0
+
+    for card in sorted_hand:
+        if card.value == current_value:
+            current_value += 1
+            same_cards_counter += 1
+        else:
+            current_value = card.value
+            same_cards_counter = 0
+
+        if same_cards_counter == 3:
+            for i in range(2):
+                sorted_hand.remove(card)
+
+    if same_cards_counter == 4:
+        print('Four of a kind')
         return 1
 
     return 0
@@ -160,4 +231,3 @@ hand = Hand()
 hand.__init__()
 for i in range(7):
     hand.add_card(Deck.get_card())
-
