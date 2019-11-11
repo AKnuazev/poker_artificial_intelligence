@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/graphics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/pokergame.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/pokergame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/poker_gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/poker_gui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
