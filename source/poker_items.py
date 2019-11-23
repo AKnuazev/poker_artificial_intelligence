@@ -311,57 +311,13 @@ class Hand:
             print_str += str(card) + ' '
         return print_str
 
-    def hand1_better_hand2(self, second_hand, board):
+    def better_than(self, second_hand, board):
         return self.check_combination(board) > second_hand.check_combination(board)
 
-    def hand1_equal_hand2(self, second_hand, board):
+    def worse_than(self, second_hand, board):
+        return self.check_combination(board) < second_hand.check_combination(board)
+
+    def equal_to(self, second_hand, board):
         return self.check_combination(board) == second_hand.check_combination(board)
 
 
-class Table(object):
-    def __init__(self, num_hands):
-        self.deck = Deck()
-        self.deck.shuffle()
-        self.hands = []
-        cards_in_hand_number = 2
-
-        for i in range(num_hands):
-            curr_hand = Hand()
-            for j in range(cards_in_hand_number):
-                curr_hand.append(self.deck.deal())
-            self.hands.append(curr_hand)
-
-    def play(self):
-        for i in range(len(self.hands)):
-            sortedHand = sorted(self.hands[i], reverse=True)
-            hand = ''
-            for card in sortedHand:
-                hand = hand + str(card) + ' '
-            # print('Hand ' + str(i + 1) + ': ' + hand)
-
-    def point(self, hand):  # point()function to calculate partial score
-        sortedHand = sorted(hand, reverse=True)
-        c_sum = 0
-        valuelist = []
-        for card in sortedHand:
-            valuelist.append(card.value)
-        c_sum = valuelist[0] * 13 ** 4 + valuelist[1] * 13 ** 3 + valuelist[2] * 13 ** 2 + valuelist[3] * 13 + \
-                valuelist[4]
-        return c_sum
-
-
-deck = Deck()
-deck.shuffle()
-
-for i in range(7):
-    hand = Hand()
-    board = Hand()
-    for k in range(2):
-        hand.add_card(deck.get_card())
-
-    for k in range(5):
-        board.add_card(deck.get_card())
-
-    print(hand + board)
-    print(hand.check_combination(board))
-    print("_______________________")
