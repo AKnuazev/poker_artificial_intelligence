@@ -27,6 +27,7 @@ def check_royal_flush(hand):
 
     return 0
 
+
 def check_straight_flush(hand):
     sorted_hand = sorted(hand.cards)
 
@@ -51,6 +52,7 @@ def check_straight_flush(hand):
 
     return 0
 
+
 def check_four_of_a_kind(hand):
     sorted_hand = sorted(hand.cards)
 
@@ -70,6 +72,7 @@ def check_four_of_a_kind(hand):
 
     return 0
 
+
 def check_full_house(hand):
     sorted_hand = sorted(hand.cards)
 
@@ -88,7 +91,7 @@ def check_full_house(hand):
                     return 1
                 else:
                     return 0
-            current_card=card
+            current_card = card
             same_value_cards_counter = 1
 
         if same_value_cards_counter == 3:
@@ -100,6 +103,7 @@ def check_full_house(hand):
             else:
                 return 0
     return 0
+
 
 def check_flush(hand):
     current_suit = hand.cards[0].suit
@@ -117,6 +121,7 @@ def check_flush(hand):
             print('Flush')
             return 1
     return 0
+
 
 def check_straight(hand):
     sorted_hand = sorted(hand.cards)
@@ -140,6 +145,7 @@ def check_straight(hand):
 
     return 0
 
+
 def check_three_of_a_kind(hand):
     sorted_hand = sorted(hand.cards)
 
@@ -157,6 +163,7 @@ def check_three_of_a_kind(hand):
             same_value_cards_counter = 1
 
     return 0
+
 
 def check_two_pairs(hand):
     sorted_hand = sorted(hand.cards)
@@ -181,6 +188,7 @@ def check_two_pairs(hand):
             same_value_cards_counter = 1
     return 0
 
+
 def check_one_pair(hand):  # returns the total_point and prints out 'One Pair' if true, if false, pass down to isHigh()
     sorted_hand = sorted(hand.cards)
 
@@ -198,6 +206,7 @@ def check_one_pair(hand):  # returns the total_point and prints out 'One Pair' i
             same_value_cards_counter = 1
 
     return 0
+
 
 def check_highest_card_value(hand):  # returns the value of the highest card
     sorted_hand = sorted(hand.cards)
@@ -319,5 +328,3 @@ class Hand:
 
     def equal_to(self, second_hand, board):
         return self.check_combination(board) == second_hand.check_combination(board)
-
-

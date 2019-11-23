@@ -1,4 +1,5 @@
 from graphviz import Digraph
+
 dot = Digraph(comment='The Round Table')
 dot.node('A', 'King Arthur')
 dot.node('B', 'Sir Bede the Wise')
