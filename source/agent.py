@@ -14,6 +14,14 @@ class User:
         self.states = states
         self.actions = actions
 
+    def act(self, state, tau):
+        action = input('Enter action: ')
+        pi = np.zeros(self.action_size)
+        pi[action] = 1
+        value = None
+        NN_value = None
+        return (action, pi, value, NN_value)
+
 
 class Agent:
     def __init__(self, name, states, actions, model):
@@ -32,8 +40,8 @@ class Agent:
 
     # def act(self, ):
 
-    def predict(self, input_to_model):
-        predictions = self.model.predict(input_to_model)
+    def predict(self, model_input):
+        predictions = self.model.predict(model_input)
         return predictions
 
     # def get_preds(self, state):
