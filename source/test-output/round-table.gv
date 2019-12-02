@@ -5,5 +5,12 @@ digraph {
 	L [label="Sir Anton the Brave"]
 	A -> B
 	A -> L
-	B -> L [constraint=false]
+	{
+		c [label=new1]
+		d [label=new2]
+		e [label=new3]
+		c -> d
+		c -> e
+	}
+	A -> c
 }

@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/game_simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/MCTS.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/MCTS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/TestGraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/TestGraph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/game_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/game_simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/poker_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/poker_game.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test-output/round-table.gv" beforeDir="false" afterPath="$PROJECT_DIR$/source/test-output/round-table.gv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/test-output/round-table.gv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/source/test-output/round-table.gv.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +32,7 @@
   <component name="ProjectId" id="1TLalUzGEgBWaraKLf3p1nk6cWc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FourInRawExample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
   <component name="RecentsManager">
@@ -49,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.poker_game">
+  <component name="RunManager" selected="Python.TestGraph">
     <configuration name="TestGraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.poker_game" />
         <item itemvalue="Python.TestGraph" />
+        <item itemvalue="Python.poker_game" />
         <item itemvalue="Python.pokergame" />
         <item itemvalue="Python.test_file" />
         <item itemvalue="Python.poker_gui" />

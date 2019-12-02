@@ -3,9 +3,9 @@ import random
 
 import source.MCTS as mcts
 from source.poker_game import Game
-
 import time
 import matplotlib.pyplot as plt
+from source.poker_items import Hand
 
 
 class User:
@@ -14,22 +14,17 @@ class User:
         self.states = states
         self.actions = actions
 
-    def act(self, state, tau):
-        action = input('Enter action: ')
-        pi = np.zeros(self.action_size)
-        pi[action] = 1
-        value = None
-        NN_value = None
-        return (action, pi, value, NN_value)
+    def act(self):
+        return input('Enter action: ')
 
 
 class Agent:
-    def __init__(self, name, states, actions, model):
+    def __init__(self, name, hand, board, bet, model):
         self.name = name
 
-        self.states = states
-        self.actions = actions
-
+        self.hand = hand
+        self.board = board
+        self.bet = bet
         self.model = model
 
     # def simulate(self):
@@ -50,5 +45,4 @@ class Agent:
         self.root = mcts.Node(state)
         self.mcts = mcts.MCTS(self.root)
 
-   # def evaluateLeaf(self, ):
-
+# def evaluateLeaf(self, ):

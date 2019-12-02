@@ -6,7 +6,16 @@ dot.node('B', 'Sir Bede the Wise')
 dot.node('L', 'Sir Anton the Brave')
 
 dot.edges(['AB', 'AL'])
-dot.edge('B', 'L', constraint='false')
+
+new_dot = Digraph()
+new_dot.node('c', "new1")
+new_dot.node('d', "new2")
+new_dot.node('e', "new3")
+
+new_dot.edges(['cd', 'ce'])
+
+dot.subgraph(new_dot)
+dot.edge('A','c')
 
 print(dot.source)
 

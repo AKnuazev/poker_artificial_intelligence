@@ -1,6 +1,7 @@
 from source.poker_items import Card, Deck, Hand
 import numpy as np
 
+
 class Round(object):
     def __init__(self, dealer_turn, players_points, players_number=2, cards_in_hand_number=2, deal_amount=50,
                  raise_size=25):
@@ -72,12 +73,12 @@ class Round(object):
 
 
 class Game(object):
-    def __init__(self):
+    def __init__(self, points):
         # Game settings
         players_number = 2
         cards_in_hand_number = 2
-        self.points = [1000, 1000]  # Players points at the beginning
-        self.actions = np.array([0,1,2])
+        self.points = points  # Players points at the beginning
+        self.actions = np.array([0, 1, 2])
         self.action_size = len(self.actions)
 
         # Prepare items
