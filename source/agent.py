@@ -33,7 +33,9 @@ class Agent:
 
     # def chooseAction(self, ):
 
-    # def act(self, ):
+    def act(self, state):
+        return mcts.get_action(state)
+
 
     def predict(self, model_input):
         predictions = self.model.predict(model_input)
