@@ -22,7 +22,7 @@ def check_royal_flush(hand):
             in_a_row_counter = 1
 
     if in_a_row_counter > 4:
-        print('Royal Flush')
+        # print('Royal Flush')
         return 1
 
     return 0
@@ -47,7 +47,7 @@ def check_straight_flush(hand):
             in_a_row_counter = 1
 
     if in_a_row_counter > 4:
-        print('Straight Flush')
+        # print('Straight Flush')
         return 1
 
     return 0
@@ -67,7 +67,7 @@ def check_four_of_a_kind(hand):
             same_value_cards_counter = 1
 
     if same_value_cards_counter > 3:
-        print('Four of a kind')
+        # print('Four of a kind')
         return 1
 
     return 0
@@ -118,7 +118,7 @@ def check_flush(hand):
 
     for i in range(4):
         if same_suit_quant[i] > 3:
-            print('Flush')
+            # print('Flush')
             return 1
     return 0
 
@@ -140,7 +140,7 @@ def check_straight(hand):
             in_a_row_counter = 1
 
     if in_a_row_counter > 4:
-        print('Straight')
+        # print('Straight')
         return 1
 
     return 0
@@ -156,7 +156,7 @@ def check_three_of_a_kind(hand):
         if card.value == current_value:
             same_value_cards_counter += 1
             if same_value_cards_counter == 3:
-                print('Three of a kind')
+                # print('Three of a kind')
                 return 1
         else:
             current_value = card.value
@@ -180,7 +180,7 @@ def check_two_pairs(hand):
                     hand.cards.remove(current_card)
 
                 if check_one_pair(hand):  # and check if there one more pair
-                    print("Two pairs")
+                    # print("Two pairs")
                     return 1
                 else:
                     return 0
@@ -199,7 +199,7 @@ def check_one_pair(hand):  # returns the total_point and prints out 'One Pair' i
         if card.value == current_value:
             same_value_cards_counter += 1
             if same_value_cards_counter == 2:
-                print('Two of a kind')
+                # print('Two of a kind')
                 return 1
         else:
             current_value = card.value
@@ -210,7 +210,7 @@ def check_one_pair(hand):  # returns the total_point and prints out 'One Pair' i
 
 def check_highest_card_value(hand):  # returns the value of the highest card
     sorted_hand = sorted(hand.cards)
-    print("Highest: " + str(sorted_hand[len(sorted_hand) - 1]))
+    # print("Highest: " + str(sorted_hand[len(sorted_hand) - 1]))
     return sorted_hand[len(sorted_hand) - 1].value
 
 
@@ -284,7 +284,7 @@ class Hand:
     def __len__(self):
         return len(self.cards)
 
-    def check_combination(self, board=None):
+    def check_combination(self, board):
         if check_royal_flush(self):
             return 9
         elif check_straight_flush(self + board):
