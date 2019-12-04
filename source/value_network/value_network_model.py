@@ -3,9 +3,8 @@ from keras.models import Sequential, load_model, Model
 from keras.optimizers import sgd
 from keras.callbacks import ModelCheckpoint
 
-from source.settings import run_folder, run_archive_folder
-from source.settings import VALUE_HIDDEN_LAYERS_QUANTITY, VALUE_NEURONS_QUANTITY
-from source.settings import VALUE_BATCH_SIZE, VALUE_DATASET_SIZE, VALUE_EPOCHS
+from source.value_network.value_network_settings import VALUE_HIDDEN_LAYERS_QUANTITY, VALUE_NEURONS_QUANTITY
+from source.value_network.value_network_settings import VALUE_BATCH_SIZE, VALUE_DATASET_SIZE, VALUE_EPOCHS
 
 from source.poker_game import Game, GameState
 from source.poker_items import Deck, Hand
@@ -84,8 +83,8 @@ class ValueNetwork:
     def predict(self, some_state_parametrs):
         return self.model.predict(some_state_parametrs)
 
-    def save(self, game, version):
-        self.model.save(run_folder + 'models/version' + version + '.h5')
-
-    def load(self, game, run_number, version):
-        return load_model(run_archive_folder + ...)
+    # def save(self, game, version):
+    #     self.model.save(run_folder + 'models/version' + version + '.h5')
+    #
+    # def load(self, game, run_number, version):
+    #     return load_model(run_archive_folder + ...)
