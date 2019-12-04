@@ -54,7 +54,7 @@ class Tree:
         for layer in range(self.game.actions_number*2):                 # 9
             self.lengths.append(pow(self.game.actions_number, layer))   # 4
 
-        
+
     def __len__(self):
         return len(self.tree)
 

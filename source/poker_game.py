@@ -105,3 +105,4 @@ class GameState:
         self.hand2 = hand2
         self.board = board
         self.bet = bet
+

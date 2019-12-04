@@ -1,16 +1,20 @@
 from keras.layers.core import Dense
 from keras.models import Sequential, load_model, Model
 from source.settings import run_folder, run_archive_folder
+from source.settings import POLICY_HIDDEN_LAYERS_QUANTITY, POLICY_NEURONS_QUANTITY
+from source.poker_game import Game, GameState
 
 from math import log2, pow
 
 
-class MyNetwork:
+class PolicyNetwork:
     def __init__(self, input_dim, output_dim, learning_rate):  # Later - more parameters
         self.model = Sequential()
-        self.model.add(Dense(32, input_dim=input_dim, output_dim=output_dim, learning_rate=learning_rate))
 
-    def loss_function(self, z, v, pi, T, p, tau):
+        for _ in range(HIDDEN_LAYERS_QUANTITY):
+            self.model.add(Dense(32, input_dim=input_dim, output_dim=output_dim, learning_rate=learning_rate))
+
+    def loss_function(self, y_true, y_pred):
         return pow((z - v), 2) - pow(pi, T) * log2(p) + pow(tau, 2)
 
     def predict(self, some_state_parametrs):
