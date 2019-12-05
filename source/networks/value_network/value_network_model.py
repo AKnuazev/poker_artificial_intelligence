@@ -3,8 +3,8 @@ from keras.models import Sequential, load_model, Model
 from keras.optimizers import SGD
 from keras.callbacks import ModelCheckpoint
 
-from source.value_network.value_network_settings import VALUE_HIDDEN_LAYERS_QUANTITY, VALUE_NEURONS_QUANTITY
-from source.value_network.value_network_settings import VALUE_BATCH_SIZE, VALUE_DATASET_SIZE, VALUE_EPOCHS
+from source.networks.value_network.value_network_settings import VALUE_HIDDEN_LAYERS_QUANTITY, VALUE_NEURONS_QUANTITY
+from source.networks.value_network.value_network_settings import VALUE_BATCH_SIZE, VALUE_DATASET_SIZE, VALUE_EPOCHS
 
 from source.poker_game import Game, GameState
 from source.poker_items import Deck, Hand, Card
