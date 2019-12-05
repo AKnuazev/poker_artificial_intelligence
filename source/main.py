@@ -9,15 +9,20 @@ from source.value_network.value_network_model import ValueNetwork
 # plt.plot(x, y)
 # plt.show()
 
+
+
 # path test
+# f = open('value_network/training_1/cp.ckpt', 'w')
+
+# Network training
 best_network = ValueNetwork()
 best_network.start_training()
 best_network.visualize_studying_results()
 
 # numpy example
-a = [1, 2]
-b = [3, 4]
-
-c = np.array((a + b))
-print(c)
-print(c.size)
+# a = [1, 2]
+# b = [3, 4]
+#
+# c = np.array((a + b))
+# print(c)
+# print(c.size)

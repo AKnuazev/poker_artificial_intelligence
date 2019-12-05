@@ -20,7 +20,7 @@ class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "training_1/cp.ckpt"
+        self.checkpoint_path = "value_network/training_1/cp.ckpt"
         self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY
@@ -29,7 +29,7 @@ class ValueNetwork:
         self.model = Sequential()
 
         # Input layer
-        self.model.add(Dense(14, input_shape=(1,)))
+        self.model.add(Dense(14, input_dim=14))
 
         # Hidden layers
         for _ in range(VALUE_HIDDEN_LAYERS_QUANTITY):
@@ -78,14 +78,16 @@ class ValueNetwork:
             values.append(card.value)
 
             # suits = ["♠", "♣", "♥", "♦"]  # "spades", " clubs", "hearts", "diamonds"
-            if card.suit == "♠":
-               suits.append(0)
-            elif card.suit == "♣":
+            if card.suit == '0':
+                suits.append(0)
+            elif card.suit == "♠":
                 suits.append(1)
-            elif card.suit == "♥":
+            elif card.suit == "♣":
                 suits.append(2)
-            elif card.suit == "♦":
+            elif card.suit == "♥":
                 suits.append(3)
+            elif card.suit == "♦":
+                suits.append(4)
 
         # numpy_train = np.array([values, suits])  # Convert our array to numpy array
         numpy_train = np.array(values + suits)  # Convert our array to numpy array
@@ -96,12 +98,27 @@ class ValueNetwork:
         checkpoint_callback = ModelCheckpoint(filepath=self.checkpoint_path, save_weights_only=True, verbose=1)
         training_set, true_results_set = self.create_full_dataset()
         # true_results_set = true_results_set.reshape(10000, 1, 1)
-        self.history = self.model.fit(training_set, true_results_set,epochs=VALUE_EPOCHS, batch_size=VALUE_BATCH_SIZE, callbacks=[checkpoint_callback])
+        self.history = self.model.fit(training_set, true_results_set, epochs=VALUE_EPOCHS, batch_size=VALUE_BATCH_SIZE,
+                                      callbacks=[checkpoint_callback])
 
     def visualize_studying_results(self):
-        y = self.history
-        x = len(y)
-        plt.plot(x, y)
+        # print(self.history.history.keys())
+        # summarize history for accuracy
+        plt.plot(self.history.history['accuracy'])
+        # plt.plot(self.history.history['val_accuracy'])
+        plt.title('model accuracy')
+        plt.ylabel('accuracy')
+        plt.xlabel('epoch')
+        plt.legend(['train', 'test'], loc='upper left')
+        plt.show()
+        # self.history.history[]
+        # summarize history for loss
+        plt.plot(self.history.history['loss'])
+        # plt.plot(self.history.history['val_loss'])
+        plt.title('model loss')
+        plt.ylabel('loss')
+        plt.xlabel('epoch')
+        plt.legend(['train', 'test'], loc='upper left')
         plt.show()
 
     def predict(self, some_state_parametrs):
