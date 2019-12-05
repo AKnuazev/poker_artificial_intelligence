@@ -21,7 +21,7 @@ class PolicyNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "policy_network/training_1/cp.ckpt"
+        self.checkpoint_path = "networks/policy_network/trainings/training_1/cp.ckpt"
         self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
 
         self.layers_quant = POLICY_HIDDEN_LAYERS_QUANTITY
@@ -47,14 +47,14 @@ class PolicyNetwork:
         true_results_set = []
 
         for _ in range(POLICY_DATASET_SIZE):
-            train, combination = self.create_train()
+            train, result = self.create_train()
             training_set.append(train)
-            true_results_set.append(combination)
+            true_results_set.append(result)
 
         numpy_training_set = np.array(training_set)
-        numpy_true_combinations_set = np.array(true_results_set)
+        numpy_true_results_set = np.array(true_results_set)
 
-        return numpy_training_set, numpy_true_combinations_set
+        return numpy_training_set, numpy_true_results_set
 
     def create_train(self):
         train = []
@@ -69,7 +69,7 @@ class PolicyNetwork:
         for i in range(2):
             hand1.add_card(deck.get_card())
         for i in range(2):
-            hand1.add_card(deck.get_card())
+            hand2.add_card(deck.get_card())
         for i in range(5):
             board.add_card(deck.get_card())
 
@@ -100,30 +100,13 @@ class PolicyNetwork:
             elif card.suit == "♦":
                 suits.append(4)
 
-        # In hand 2
-        for card in hand2.cards:
-            values.append(card.value)
-
-            # suits = ["♠", "♣", "♥", "♦"]  # "spades", " clubs", "hearts", "diamonds"
-            if card.suit == '0':
-                suits.append(0)
-            elif card.suit == "♠":
-                suits.append(1)
-            elif card.suit == "♣":
-                suits.append(2)
-            elif card.suit == "♥":
-                suits.append(3)
-            elif card.suit == "♦":
-                suits.append(4)
-
         # In board
         for i in range(open_cards_quantity):
             values.append(board.cards[i].value)
 
             # suits = ["♠", "♣", "♥", "♦"]  # "spades", " clubs", "hearts", "diamonds"
-            if board.cards[i].suit == '0':
-                suits.append(0)
-            elif board.cards[i].suit == "♠":
+
+            if board.cards[i].suit == "♠":
                 suits.append(1)
             elif board.cards[i].suit == "♣":
                 suits.append(2)
@@ -131,6 +114,9 @@ class PolicyNetwork:
                 suits.append(3)
             elif board.cards[i].suit == "♦":
                 suits.append(4)
+        for i in range(5-open_cards_quantity):
+            values.append(0)
+            suits.append(0)
 
         numpy_train = np.array(values + suits)  # Convert our array to numpy array
         return numpy_train, round_result

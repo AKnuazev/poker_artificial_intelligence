@@ -20,7 +20,7 @@ class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "value_network/training_1/cp.ckpt"
+        self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"
         self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY

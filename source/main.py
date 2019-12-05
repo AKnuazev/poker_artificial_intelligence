@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import source.settings as setts
-from source.value_network.value_network_model import ValueNetwork
+from source.networks.value_network.value_network_model import ValueNetwork
+from source.networks.policy_network.policy_network_model import PolicyNetwork
 
 # plot example
 # y = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 17, 20, 25, 40])
@@ -14,8 +15,13 @@ from source.value_network.value_network_model import ValueNetwork
 # path test
 # f = open('value_network/training_1/cp.ckpt', 'w')
 
-# Network training
-best_network = ValueNetwork()
+# Value-network training
+# best_network = ValueNetwork()
+# best_network.start_training()
+# best_network.visualize_studying_results()
+
+# Policy-network training
+best_network = PolicyNetwork()
 best_network.start_training()
 best_network.visualize_studying_results()
 
