@@ -1,6 +1,6 @@
-from keras.layers.core import Dense
+from keras.layers.core import Dense, Dropout
 from keras.models import Sequential, load_model, Model
-from keras.optimizers import SGD
+from keras.optimizers import SGD, adam
 from keras.callbacks import ModelCheckpoint
 
 from source.networks.policy_network.policy_network_settings import POLICY_HIDDEN_LAYERS_QUANTITY, \
@@ -33,8 +33,9 @@ class PolicyNetwork:
         self.model.add(Dense(14, input_dim=14))
 
         # Hidden layers
-        for _ in range(POLICY_HIDDEN_LAYERS_QUANTITY):
+        for i in range(POLICY_HIDDEN_LAYERS_QUANTITY):
             self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='relu'))
+
 
         # Output layer
         self.model.add(Dense(1, activation='relu'))  # from -12 to 9

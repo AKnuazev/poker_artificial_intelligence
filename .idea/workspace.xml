@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/1st_training_series/train_6/train6__settings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/training_statistics/policy_network_training/1st_training_series/train_6/train6__settings.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
