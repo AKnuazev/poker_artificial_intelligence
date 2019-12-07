@@ -282,26 +282,26 @@ class Hand:
         return len(self.cards)
 
     def check_combination(self, board):
-        if check_royal_flush(self):
-            return 9
+        if check_royal_flush(self + board):
+            return 9 + 14
         elif check_straight_flush(self + board):
-            return 8
+            return 8 + 14
         elif check_four_of_a_kind(self + board):
-            return 7
+            return 7 + 14
         elif check_full_house(self + board):
-            return 6
+            return 6 + 14
         elif check_flush(self + board):
-            return 5
+            return 5 + 14
         elif check_straight(self + board):
-            return 4
+            return 4 + 14
         elif check_three_of_a_kind(self + board):
-            return 3
+            return 3 + 14
         elif check_two_pairs(self + board):
-            return 2
+            return 2 + 14
         elif check_one_pair(self + board):
-            return 1
+            return 1 + 14
         else:
-            return -14 + check_highest_card_value(self + board)
+            return check_highest_card_value(self + board)
 
     def __add__(self, second):
         temp_hand = Hand()

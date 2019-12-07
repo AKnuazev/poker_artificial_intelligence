@@ -30,18 +30,17 @@ class PolicyNetwork:
         self.model = Sequential()
 
         # Input layer
-        self.model.add(Dense(7, input_dim=7))
+        self.model.add(Dense(14, input_dim=14))
 
         # Hidden layers
         for i in range(POLICY_HIDDEN_LAYERS_QUANTITY):
-            self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='tanh'))
-            self.model.add(Dropout(0.3))
+            self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='relu'))
 
         # Output layer
-        self.model.add(Dense(1, activation='tanh'))  # from -12 to 9
+        self.model.add(Dense(1, activation='relu'))  # from -12 to 9
 
         # Compile model
-        self.model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
+        self.model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
     def create_full_dataset(self):
         training_set = []
@@ -76,11 +75,11 @@ class PolicyNetwork:
 
         round_result = 0
         if hand1.better_than(hand2, board):
-            round_result = 1
+            round_result = 2                  # Player wins
         elif hand1.worse_than(hand2, board):
-            round_result = -1
+            round_result = 0                  # Opponent wins
         elif hand1.equal_to(hand2, board):
-            round_result = 0
+            round_result = 1                  # Draw
 
         values = []
         suits = []
@@ -119,8 +118,8 @@ class PolicyNetwork:
             values.append(0)
             suits.append(0)
 
-        # numpy_train = np.array(values + suits)  # Convert our array to numpy array
-        numpy_train = np.array(values)
+        numpy_train = np.array(values + suits)  # Convert our array to numpy array
+        # numpy_train = np.array(values)
         # print(numpy_train.shape)
         return numpy_train, round_result
 

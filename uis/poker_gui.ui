@@ -6,21 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>854</height>
+    <width>1284</width>
+    <height>839</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+selection-color: rgb(255, 255, 255);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="SettingsBox">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>590</y>
-      <width>201</width>
-      <height>171</height>
+      <x>90</x>
+      <y>520</y>
+      <width>291</width>
+      <height>191</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -28,168 +32,15 @@
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="title">
-     <string>Settings</string>
+     <string>Game</string>
     </property>
-   </widget>
-   <widget class="QGroupBox" name="ReportBox">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>590</y>
-      <width>191</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="title">
-     <string>Report</string>
-    </property>
-    <widget class="QListView" name="ReportText">
+    <widget class="QLabel" name="BetText_2">
      <property name="geometry">
       <rect>
        <x>20</x>
        <y>30</y>
        <width>151</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(232, 232, 232);</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="ActionsBox">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>590</y>
-      <width>431</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="title">
-     <string>Actions</string>
-    </property>
-    <widget class="QPushButton" name="PassButton">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>40</y>
-       <width>75</width>
        <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(232, 232, 232);
-font: 900 12pt &quot;Perpetua Titling MT&quot;;
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>PASS</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="CheckButton">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>40</y>
-       <width>75</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(232, 232, 232);
-font: 900 12pt &quot;Perpetua Titling MT&quot;;
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>CHECK</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="CallButton">
-     <property name="geometry">
-      <rect>
-       <x>230</x>
-       <y>40</y>
-       <width>75</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(232, 232, 232);
-font: 900 12pt &quot;Perpetua Titling MT&quot;;
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>CALL</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="RaiseButton">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>40</y>
-       <width>71</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(232, 232, 232);
-font: 900 12pt &quot;Perpetua Titling MT&quot;;
-color: rgb(0, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string>RAISE</string>
-     </property>
-    </widget>
-    <widget class="QSlider" name="RaiseValuSlider">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>130</y>
-       <width>181</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid grey;
-background-color: rgb(232, 232, 232);</string>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="RaiseValue">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>90</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid grey;
-background-color: rgb(232, 232, 232);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="RaiseText">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>100</y>
-       <width>91</width>
-       <height>20</height>
       </rect>
      </property>
      <property name="font">
@@ -205,15 +56,194 @@ background-color: rgb(232, 232, 232);</string>
       <string notr="true">font: 900 12pt &quot;Perpetua Titling MT&quot;;</string>
      </property>
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;Raise value:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline; color:#ffffff;&quot;&gt;PLAYER SCORE:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BetText_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Perpetua Titling MT</family>
+       <pointsize>12</pointsize>
+       <weight>99</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 900 12pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline; color:#ffffff;&quot;&gt;BET value:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BetText_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>171</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Perpetua Titling MT</family>
+       <pointsize>12</pointsize>
+       <weight>99</weight>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 900 12pt &quot;Perpetua Titling MT&quot;;</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline; color:#ffffff;&quot;&gt;OPPONENT SCORE:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="PlayerScoreValue">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid grey;
+background-color: rgb(232, 232, 232);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BetValue_3">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>80</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid grey;
+background-color: rgb(232, 232, 232);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="BetValue_4">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>130</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid grey;
+background-color: rgb(232, 232, 232);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <zorder>BetText</zorder>
+    <zorder>BetText_2</zorder>
+    <zorder>BetText_3</zorder>
+    <zorder>BetText_4</zorder>
+    <zorder>PlayerScoreValue</zorder>
+    <zorder>BetValue_3</zorder>
+    <zorder>BetValue_4</zorder>
+   </widget>
+   <widget class="QGroupBox" name="ActionsBox">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>570</y>
+      <width>351</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 85, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <widget class="QPushButton" name="PassButton">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>75</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(232, 232, 232);
+font: 900 12pt &quot;Perpetua Titling MT&quot;;
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>PASS</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="CallButton">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>50</y>
+       <width>75</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(232, 232, 232);
+font: 900 12pt &quot;Perpetua Titling MT&quot;;
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>CALL</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="RaiseButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>50</y>
+       <width>71</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(232, 232, 232);
+font: 900 12pt &quot;Perpetua Titling MT&quot;;
+color: rgb(0, 0, 0);</string>
+     </property>
+     <property name="text">
+      <string>RAISE</string>
      </property>
     </widget>
    </widget>
    <widget class="QLabel" name="PokerTableImage">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>150</x>
+      <y>-20</y>
       <width>1001</width>
       <height>871</height>
      </rect>
@@ -228,19 +258,20 @@ background-color: rgb(232, 232, 232);</string>
    <widget class="QGroupBox" name="BoardBox">
     <property name="geometry">
      <rect>
-      <x>390</x>
-      <y>250</y>
+      <x>540</x>
+      <y>230</y>
       <width>211</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(9, 70, 10);</string>
     </property>
     <property name="title">
      <string>BOARD</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -311,19 +342,20 @@ background-color: rgb(0, 0, 98);</string>
    <widget class="QGroupBox" name="Hand2Box">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>350</y>
+      <x>600</x>
+      <y>140</y>
       <width>91</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(9, 70, 10);</string>
     </property>
     <property name="title">
      <string>HAND 2</string>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -361,15 +393,15 @@ background-color: rgb(0, 0, 98);</string>
    <widget class="QGroupBox" name="Hand1Box">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>160</y>
+      <x>600</x>
+      <y>330</y>
       <width>91</width>
       <height>81</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-color: rgb(255, 255, 255);
-color: rgb(255, 255, 255);</string>
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(9, 70, 10);</string>
     </property>
     <property name="title">
      <string>HAND 1</string>
@@ -423,30 +455,61 @@ background-color: rgb(0, 0, 98);</string>
      <zorder>card2_hand1</zorder>
      <zorder>card1_hand1</zorder>
     </widget>
+    <zorder>layoutWidget</zorder>
+    <zorder>Hand2Box</zorder>
+   </widget>
+   <widget class="QGroupBox" name="ReportBox">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>520</y>
+      <width>271</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 85, 0);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="title">
+     <string>Report</string>
+    </property>
+    <widget class="QListView" name="ReportText">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>211</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(232, 232, 232);</string>
+     </property>
+    </widget>
    </widget>
    <zorder>PokerTableImage</zorder>
    <zorder>SettingsBox</zorder>
-   <zorder>ReportBox</zorder>
    <zorder>ActionsBox</zorder>
-   <zorder>card1_board</zorder>
-   <zorder>card2_board</zorder>
-   <zorder>card3_board</zorder>
-   <zorder>card4_board</zorder>
-   <zorder>card5_board</zorder>
    <zorder>BoardBox</zorder>
    <zorder>Hand2Box</zorder>
    <zorder>Hand1Box</zorder>
+   <zorder>BetText</zorder>
+   <zorder>ReportBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>true</bool>
+    <bool>false</bool>
    </attribute>
    <addaction name="actionNew_game"/>
    <addaction name="separator"/>
