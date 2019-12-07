@@ -2,7 +2,7 @@ from keras.layers.core import Dense, Dropout
 from keras.models import Sequential, load_model, Model
 from keras.optimizers import SGD, adam
 from keras.callbacks import ModelCheckpoint
-
+from keras.losses import categorical_crossentropy
 from source.networks.policy_network.policy_network_settings import POLICY_HIDDEN_LAYERS_QUANTITY, \
     POLICY_NEURONS_QUANTITY
 from source.networks.policy_network.policy_network_settings import POLICY_BATCH_SIZE, POLICY_DATASET_SIZE, POLICY_EPOCHS
@@ -30,15 +30,15 @@ class PolicyNetwork:
         self.model = Sequential()
 
         # Input layer
-        self.model.add(Dense(14, input_dim=14))
+        self.model.add(Dense(7, input_dim=7))
 
         # Hidden layers
         for i in range(POLICY_HIDDEN_LAYERS_QUANTITY):
-            self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='relu'))
-
+            self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='tanh'))
+            self.model.add(Dropout(0.3))
 
         # Output layer
-        self.model.add(Dense(1, activation='relu'))  # from -12 to 9
+        self.model.add(Dense(1, activation='tanh'))  # from -12 to 9
 
         # Compile model
         self.model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
@@ -115,11 +115,13 @@ class PolicyNetwork:
                 suits.append(3)
             elif board.cards[i].suit == "♦":
                 suits.append(4)
-        for i in range(5-open_cards_quantity):
+        for i in range(5 - open_cards_quantity):
             values.append(0)
             suits.append(0)
 
-        numpy_train = np.array(values + suits)  # Convert our array to numpy array
+        # numpy_train = np.array(values + suits)  # Convert our array to numpy array
+        numpy_train = np.array(values)
+        # print(numpy_train.shape)
         return numpy_train, round_result
 
     def start_training(self):
@@ -150,8 +152,20 @@ class PolicyNetwork:
         plt.legend(['train', 'test'], loc='upper left')
         plt.show()
 
-    def predict(self, some_state_parametrs):
-        return self.model.predict(some_state_parametrs)
+    def predict(self, hand, board):
+        values = []
+        # suits=[]
+        for card in hand.cards:
+            values.append(card.value)
+            # suits.append(card.suit)
+
+        for card in board.cards:
+            values.append(card.value)
+            # suits.append(card.suit)
+
+        input = np.array([values])
+
+        return self.model.predict(input)
 
     def load(self):
-        return self.model.load_weights(self.checkpoint_path)
+        self.model.load_weights(self.checkpoint_path)

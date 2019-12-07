@@ -20,7 +20,7 @@ class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"
+        self.checkpoint_path = "networks/value_network/trainings/training_1/cp.ckpt"
         self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY
@@ -121,8 +121,39 @@ class ValueNetwork:
         plt.legend(['train', 'test'], loc='upper left')
         plt.show()
 
-    def predict(self, some_state_parametrs):
-        return self.model.predict(some_state_parametrs)
+    def predict(self, hand, board):
+        values = []
+        suits=[]
+        for card in hand.cards:
+            values.append(card.value)
+
+            if card.suit == '0':
+                suits.append(0)
+            elif card.suit == "♠":
+                suits.append(1)
+            elif card.suit == "♣":
+                suits.append(2)
+            elif card.suit == "♥":
+                suits.append(3)
+            elif card.suit == "♦":
+                suits.append(4)
+
+        for card in board.cards:
+            values.append(card.value)
+
+            if card.suit == '0':
+                suits.append(0)
+            elif card.suit == "♠":
+                suits.append(1)
+            elif card.suit == "♣":
+                suits.append(2)
+            elif card.suit == "♥":
+                suits.append(3)
+            elif card.suit == "♦":
+                suits.append(4)
+
+        input = np.array([values+suits])
+        return self.model.predict(input)
 
     def load(self):
         return self.model.load_weights(self.checkpoint_path)

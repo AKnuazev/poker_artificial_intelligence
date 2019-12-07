@@ -106,9 +106,6 @@ def check_full_house(hand):
 
 
 def check_flush(hand):
-    current_suit = hand.cards[0].suit
-
-    same_suit_cards_counter = 0
     same_suit_quant = [0, 0, 0, 0]
 
     for card in hand.cards:
@@ -117,7 +114,7 @@ def check_flush(hand):
                 same_suit_quant[i] += 1
 
     for i in range(4):
-        if same_suit_quant[i] > 3:
+        if same_suit_quant[i] > 4:
             # print('Flush')
             return 1
     return 0
