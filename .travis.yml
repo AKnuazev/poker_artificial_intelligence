@@ -1,9 +1,14 @@
 os: linux
 sudo: required
-language:
-- minimal
-services:
-- docker
+language: python
+python: "3.7"
+
+install:
+    - pip install -r requirements.txt
+
+script:
+  - python tests/poker_logic_test.py
+  - python tests/network_work_test.py
 
 notifications:
     email: false
