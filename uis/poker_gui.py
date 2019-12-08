@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'poker_gui.ui'
+# Form implementation generated from reading ui file 'C:\Users\Anton\PycharmProjects\course_work\uis\poker_gui.ui'
 #
 # Created by: PyQt5 UI code generator 5.13.2
 #
@@ -13,75 +13,75 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1284, 839)
-        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"selection-color: rgb(255, 255, 255);")
+        MainWindow.setEnabled(True)
+        MainWindow.setMinimumSize(QtCore.QSize(0, 0))
+        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.SettingsBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.SettingsBox.setGeometry(QtCore.QRect(90, 520, 291, 191))
+        self.SettingsBox.setGeometry(QtCore.QRect(100, 570, 291, 191))
         self.SettingsBox.setStyleSheet("background-color: rgb(0, 85, 0);\n"
 "color: rgb(255, 255, 255);")
         self.SettingsBox.setObjectName("SettingsBox")
-        self.BetText_2 = QtWidgets.QLabel(self.SettingsBox)
-        self.BetText_2.setGeometry(QtCore.QRect(20, 30, 151, 31))
+        self.PlayerScoreLabel = QtWidgets.QLabel(self.SettingsBox)
+        self.PlayerScoreLabel.setGeometry(QtCore.QRect(20, 30, 151, 31))
         font = QtGui.QFont()
         font.setFamily("Perpetua Titling MT")
         font.setPointSize(12)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(99)
-        self.BetText_2.setFont(font)
-        self.BetText_2.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
-        self.BetText_2.setObjectName("BetText_2")
-        self.BetText_3 = QtWidgets.QLabel(self.SettingsBox)
-        self.BetText_3.setGeometry(QtCore.QRect(20, 130, 121, 31))
+        self.PlayerScoreLabel.setFont(font)
+        self.PlayerScoreLabel.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
+        self.PlayerScoreLabel.setObjectName("PlayerScoreLabel")
+        self.BetValueLabel = QtWidgets.QLabel(self.SettingsBox)
+        self.BetValueLabel.setGeometry(QtCore.QRect(20, 130, 121, 31))
         font = QtGui.QFont()
         font.setFamily("Perpetua Titling MT")
         font.setPointSize(12)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(99)
-        self.BetText_3.setFont(font)
-        self.BetText_3.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
-        self.BetText_3.setObjectName("BetText_3")
-        self.BetText_4 = QtWidgets.QLabel(self.SettingsBox)
-        self.BetText_4.setGeometry(QtCore.QRect(20, 80, 171, 31))
+        self.BetValueLabel.setFont(font)
+        self.BetValueLabel.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
+        self.BetValueLabel.setObjectName("BetValueLabel")
+        self.OpponentScoreLabel = QtWidgets.QLabel(self.SettingsBox)
+        self.OpponentScoreLabel.setGeometry(QtCore.QRect(20, 80, 171, 31))
         font = QtGui.QFont()
         font.setFamily("Perpetua Titling MT")
         font.setPointSize(12)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(99)
-        self.BetText_4.setFont(font)
-        self.BetText_4.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
-        self.BetText_4.setObjectName("BetText_4")
-        self.PlayerScoreValue = QtWidgets.QLabel(self.SettingsBox)
-        self.PlayerScoreValue.setGeometry(QtCore.QRect(200, 30, 61, 31))
-        self.PlayerScoreValue.setStyleSheet("border: 2px solid grey;\n"
-"background-color: rgb(232, 232, 232);")
-        self.PlayerScoreValue.setText("")
-        self.PlayerScoreValue.setObjectName("PlayerScoreValue")
-        self.BetValue_3 = QtWidgets.QLabel(self.SettingsBox)
-        self.BetValue_3.setGeometry(QtCore.QRect(200, 80, 61, 31))
-        self.BetValue_3.setStyleSheet("border: 2px solid grey;\n"
-"background-color: rgb(232, 232, 232);")
-        self.BetValue_3.setText("")
-        self.BetValue_3.setObjectName("BetValue_3")
-        self.BetValue_4 = QtWidgets.QLabel(self.SettingsBox)
-        self.BetValue_4.setGeometry(QtCore.QRect(200, 130, 61, 31))
-        self.BetValue_4.setStyleSheet("border: 2px solid grey;\n"
-"background-color: rgb(232, 232, 232);")
-        self.BetValue_4.setText("")
-        self.BetValue_4.setObjectName("BetValue_4")
-        self.BetText_2.raise_()
-        self.BetText_3.raise_()
-        self.BetText_4.raise_()
-        self.PlayerScoreValue.raise_()
-        self.BetValue_3.raise_()
-        self.BetValue_4.raise_()
+        self.OpponentScoreLabel.setFont(font)
+        self.OpponentScoreLabel.setStyleSheet("font: 900 12pt \"Perpetua Titling MT\";")
+        self.OpponentScoreLabel.setObjectName("OpponentScoreLabel")
+        self.PlayerScoreNumber = QtWidgets.QLabel(self.SettingsBox)
+        self.PlayerScoreNumber.setGeometry(QtCore.QRect(200, 30, 61, 31))
+        self.PlayerScoreNumber.setStyleSheet("border: 2px solid grey;\n"
+"background-color: rgb(232, 232, 232);\n"
+"font: 900 12pt \"Perpetua Titling MT\";\n"
+"color: rgb(0, 0, 0);")
+        self.PlayerScoreNumber.setText("")
+        self.PlayerScoreNumber.setObjectName("PlayerScoreNumber")
+        self.OpponentScoreNumber = QtWidgets.QLabel(self.SettingsBox)
+        self.OpponentScoreNumber.setGeometry(QtCore.QRect(200, 80, 61, 31))
+        self.OpponentScoreNumber.setStyleSheet("border: 2px solid grey;\n"
+"background-color: rgb(232, 232, 232);\n"
+"font: 900 12pt \"Perpetua Titling MT\";\n"
+"color: rgb(0, 0, 0);")
+        self.OpponentScoreNumber.setText("")
+        self.OpponentScoreNumber.setObjectName("OpponentScoreNumber")
+        self.BetValueNumber = QtWidgets.QLabel(self.SettingsBox)
+        self.BetValueNumber.setGeometry(QtCore.QRect(200, 130, 61, 31))
+        self.BetValueNumber.setStyleSheet("border: 2px solid grey;\n"
+"background-color: rgb(232, 232, 232);\n"
+"font: 900 12pt \"Perpetua Titling MT\";\n"
+"color: rgb(0, 0, 0);")
+        self.BetValueNumber.setText("")
+        self.BetValueNumber.setObjectName("BetValueNumber")
         self.ActionsBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.ActionsBox.setGeometry(QtCore.QRect(470, 570, 351, 141))
+        self.ActionsBox.setGeometry(QtCore.QRect(480, 620, 351, 141))
         self.ActionsBox.setStyleSheet("background-color: rgb(0, 85, 0);\n"
 "color: rgb(255, 255, 255);")
         self.ActionsBox.setObjectName("ActionsBox")
@@ -104,12 +104,12 @@ class Ui_MainWindow(object):
 "color: rgb(0, 0, 0);")
         self.RaiseButton.setObjectName("RaiseButton")
         self.PokerTableImage = QtWidgets.QLabel(self.centralwidget)
-        self.PokerTableImage.setGeometry(QtCore.QRect(150, -20, 1001, 871))
+        self.PokerTableImage.setGeometry(QtCore.QRect(160, 30, 1001, 871))
         self.PokerTableImage.setText("")
-        self.PokerTableImage.setPixmap(QtGui.QPixmap("../images/Poker_table_picture_full.png"))
+        self.PokerTableImage.setPixmap(QtGui.QPixmap("C:\\Users\\Anton\\PycharmProjects\\course_work\\uis\\../images/Poker_table_picture_full.png"))
         self.PokerTableImage.setObjectName("PokerTableImage")
         self.BoardBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.BoardBox.setGeometry(QtCore.QRect(540, 230, 211, 81))
+        self.BoardBox.setGeometry(QtCore.QRect(550, 280, 211, 81))
         self.BoardBox.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(9, 70, 10);")
         self.BoardBox.setObjectName("BoardBox")
@@ -117,7 +117,8 @@ class Ui_MainWindow(object):
         self.layoutWidget.setGeometry(QtCore.QRect(10, 20, 191, 51))
         self.layoutWidget.setObjectName("layoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget)
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout.setSpacing(6)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.card1_board = QtWidgets.QLabel(self.layoutWidget)
         self.card1_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
@@ -150,7 +151,7 @@ class Ui_MainWindow(object):
         self.card5_board.setObjectName("card5_board")
         self.horizontalLayout.addWidget(self.card5_board)
         self.Hand2Box = QtWidgets.QGroupBox(self.centralwidget)
-        self.Hand2Box.setGeometry(QtCore.QRect(600, 140, 91, 81))
+        self.Hand2Box.setGeometry(QtCore.QRect(610, 190, 91, 81))
         self.Hand2Box.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(9, 70, 10);")
         self.Hand2Box.setObjectName("Hand2Box")
@@ -158,7 +159,8 @@ class Ui_MainWindow(object):
         self.layoutWidget1.setGeometry(QtCore.QRect(10, 20, 71, 51))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.layoutWidget1)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_2.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_2.setSpacing(6)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.card1_hand2 = QtWidgets.QLabel(self.layoutWidget1)
         self.card1_hand2.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
@@ -173,7 +175,7 @@ class Ui_MainWindow(object):
         self.card2_hand2.setObjectName("card2_hand2")
         self.horizontalLayout_2.addWidget(self.card2_hand2)
         self.Hand1Box = QtWidgets.QGroupBox(self.centralwidget)
-        self.Hand1Box.setGeometry(QtCore.QRect(600, 330, 91, 81))
+        self.Hand1Box.setGeometry(QtCore.QRect(610, 380, 91, 81))
         self.Hand1Box.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(9, 70, 10);")
         self.Hand1Box.setObjectName("Hand1Box")
@@ -181,7 +183,8 @@ class Ui_MainWindow(object):
         self.layoutWidget2.setGeometry(QtCore.QRect(10, 20, 71, 51))
         self.layoutWidget2.setObjectName("layoutWidget2")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.layoutWidget2)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.card1_hand1 = QtWidgets.QLabel(self.layoutWidget2)
         font = QtGui.QFont()
@@ -194,26 +197,27 @@ class Ui_MainWindow(object):
         self.card1_hand1.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
 "border-color: rgb(170, 0, 0);\n"
 "background-color: rgb(0, 0, 98);")
+        self.card1_hand1.setText("")
         self.card1_hand1.setWordWrap(False)
         self.card1_hand1.setObjectName("card1_hand1")
         self.horizontalLayout_3.addWidget(self.card1_hand1)
         self.card2_hand1 = QtWidgets.QLabel(self.layoutWidget2)
         self.card2_hand1.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
+        self.card2_hand1.setText("")
         self.card2_hand1.setObjectName("card2_hand1")
         self.horizontalLayout_3.addWidget(self.card2_hand1)
         self.card2_hand1.raise_()
         self.card1_hand1.raise_()
-        self.layoutWidget.raise_()
-        self.Hand2Box.raise_()
         self.ReportBox = QtWidgets.QGroupBox(self.centralwidget)
-        self.ReportBox.setGeometry(QtCore.QRect(910, 520, 271, 191))
+        self.ReportBox.setGeometry(QtCore.QRect(920, 570, 271, 191))
         self.ReportBox.setStyleSheet("background-color: rgb(0, 85, 0);\n"
 "color: rgb(255, 255, 255);")
         self.ReportBox.setObjectName("ReportBox")
-        self.ReportText = QtWidgets.QListView(self.ReportBox)
-        self.ReportText.setGeometry(QtCore.QRect(30, 30, 211, 131))
-        self.ReportText.setStyleSheet("background-color: rgb(232, 232, 232);")
+        self.ReportText = QtWidgets.QListWidget(self.ReportBox)
+        self.ReportText.setGeometry(QtCore.QRect(20, 30, 231, 141))
+        self.ReportText.setStyleSheet("background-color: rgb(232, 232, 232);\n"
+"color: rgb(0, 0, 0);")
         self.ReportText.setObjectName("ReportText")
         self.PokerTableImage.raise_()
         self.SettingsBox.raise_()
@@ -223,13 +227,24 @@ class Ui_MainWindow(object):
         self.Hand1Box.raise_()
         self.ReportBox.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
         self.toolBar = QtWidgets.QToolBar(MainWindow)
-        self.toolBar.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.toolBar.setStyleSheet("background-color: rgb(6, 66, 6);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 900 12pt \"Perpetua Titling MT\";\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-color: beige;")
         self.toolBar.setObjectName("toolBar")
         MainWindow.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setStyleSheet("background-color: rgb(6, 66, 6);\n"
+"color: rgb(255, 255, 255);\n"
+"border-style: outset;\n"
+"border-width: 2px;\n"
+"border-color: beige;\n"
+"")
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
         self.actionNew_game = QtWidgets.QAction(MainWindow)
         self.actionNew_game.setObjectName("actionNew_game")
         self.actionSave_report = QtWidgets.QAction(MainWindow)
@@ -246,9 +261,9 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.SettingsBox.setTitle(_translate("MainWindow", "Game"))
-        self.BetText_2.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">PLAYER SCORE:</span></p></body></html>"))
-        self.BetText_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">BET value:</span></p></body></html>"))
-        self.BetText_4.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">OPPONENT SCORE:</span></p></body></html>"))
+        self.PlayerScoreLabel.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">PLAYER SCORE:</span></p></body></html>"))
+        self.BetValueLabel.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">BET value:</span></p></body></html>"))
+        self.OpponentScoreLabel.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" text-decoration: underline; color:#ffffff;\">OPPONENT SCORE:</span></p></body></html>"))
         self.ActionsBox.setTitle(_translate("MainWindow", "Actions"))
         self.PassButton.setText(_translate("MainWindow", "PASS"))
         self.CallButton.setText(_translate("MainWindow", "CALL"))
@@ -256,8 +271,6 @@ class Ui_MainWindow(object):
         self.BoardBox.setTitle(_translate("MainWindow", "BOARD"))
         self.Hand2Box.setTitle(_translate("MainWindow", "HAND 2"))
         self.Hand1Box.setTitle(_translate("MainWindow", "HAND 1"))
-        self.card1_hand1.setText(_translate("MainWindow", "A♥"))
-        self.card2_hand1.setText(_translate("MainWindow", "K♣ "))
         self.ReportBox.setTitle(_translate("MainWindow", "Report"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
         self.actionNew_game.setText(_translate("MainWindow", "New game"))

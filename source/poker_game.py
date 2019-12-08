@@ -2,6 +2,7 @@ from source.poker_items import Card, Deck, Hand
 import numpy as np
 from source.settings import start_points
 
+
 class Round:
     def __init__(self, player1, player2, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
                  raise_size=25):
@@ -65,6 +66,7 @@ class Round:
             self.players_points[curr_player] -= self.raise_size
 
     def open_card(self):
+        self.board.cards.remove(Card(0, '0'))
         self.board.add_card(self.deck.get_card())
 
     def summarize(self):

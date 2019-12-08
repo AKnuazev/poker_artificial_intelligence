@@ -123,7 +123,7 @@ class ValueNetwork:
 
     def predict(self, hand, board):
         values = []
-        suits=[]
+        suits = []
         for card in hand.cards:
             values.append(card.value)
 
@@ -152,7 +152,7 @@ class ValueNetwork:
             elif card.suit == "♦":
                 suits.append(4)
 
-        input = np.array([values+suits])
+        input = np.array([values + suits])
         return self.model.predict(input)
 
     def evaluate(self):
