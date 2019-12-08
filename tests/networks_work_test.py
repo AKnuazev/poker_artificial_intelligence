@@ -21,10 +21,10 @@ class TestPolicyNetwork(unittest.TestCase):
 
     def test_network_values_test(self):
         policy_network = PolicyNetwork()
-        policy_network.checkpoint_abs_path = policy_network.checkpoint_abs_path.replace("tests/", 'source/')
+        policy_network.checkpoint_abs_path = policy_network.checkpoint_abs_path.replace("tests\\", 'source\\')
         print(policy_network.checkpoint_abs_path)
         policy_network.load(policy_network.checkpoint_abs_path)
-        policy_network.load()
+        # policy_network.load()
 
         value = policy_network.evaluate()
         print(value)

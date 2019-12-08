@@ -10,8 +10,8 @@ jobs:
     - name: "tests"
       script:
         - cd tests
-        - python -m unittest -v networks_work_test
-        - python -m unittest -v poker_logic_test
+        - python -m unittest -v --locals networks_work_test --cov=source .
+        - python -m unittest -v --locals poker_logic_test --cov=source .
 
 notifications:
     email: false

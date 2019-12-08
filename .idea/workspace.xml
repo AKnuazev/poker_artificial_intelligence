@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/networks_work_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/networks_work_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test">
+  <component name="RunManager" selected="Python tests.Unittests for poker_logic_test.TestItems.test_deck">
     <configuration name="Unittests for networks_work_test.TestPolicyNetwork" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,7 +80,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for poker_logic_test.TestItems" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for poker_logic_test.TestItems.test_deck" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,7 +90,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;poker_logic_test.TestItems&quot;" />
+      <option name="_new_target" value="&quot;poker_logic_test.TestItems.test_deck&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -121,19 +123,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems" />
       <item itemvalue="Python tests.Unittests for tests.networks_work_test.TestPolicyNetwork" />
       <item itemvalue="Python tests.Unittests in networks_work_test.py" />
       <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork" />
       <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test" />
+      <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems.test_deck" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems.test_deck" />
         <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test" />
         <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork" />
         <item itemvalue="Python tests.Unittests in networks_work_test.py" />
         <item itemvalue="Python tests.Unittests for tests.networks_work_test.TestPolicyNetwork" />
-        <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems" />
       </list>
     </recent_temporary>
   </component>
