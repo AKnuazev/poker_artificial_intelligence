@@ -10,8 +10,8 @@ jobs:
     - name: "tests"
       script:
         - cd tests
-        - python networks_work_test.py
-        - python poker_logic_test.py
+        - python -m unittest -v networks_work_test
+        - python -m unittest -v poker_logic_test
 
 notifications:
     email: false
