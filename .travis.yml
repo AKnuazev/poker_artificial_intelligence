@@ -6,7 +6,8 @@ jobs:
   include:
     - name: "tests"
       script:
-        - cd source
+        - cd tests
+        - python3 networks_work_test.py
         - python poker_logic_test.py
 
 notifications:

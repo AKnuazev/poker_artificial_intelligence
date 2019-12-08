@@ -1,5 +1,5 @@
 import unittest
-from .poker_items import Card, Deck, Hand, values, suits
+from source.poker_items import Card, Deck, Hand, values, suits
 
 
 # values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
@@ -35,14 +35,6 @@ class TestItems(unittest.TestCase):
         board = Hand()
         # board.add_card(Card(0, '0'))
         deck = Deck()
-
-        # for _ in range(5):
-        #     board.add_card(deck.get_card())
-        # for _ in range(2):
-        #     hand.add_card(deck.get_card())
-        #
-        # summ_hand = hand + board
-        # self.assertEqual(len(summ_hand.cards), len(hand.cards) + len(board.cards))
 
         ace_hearts = Card(14, '♥')
         two_spades = Card(2, '♠')

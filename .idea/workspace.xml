@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks_work_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/networks_work_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/poker_logic_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/poker_logic_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,27 +53,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python tests.Unittests for networks_work_test.TestPolicyNetwork">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="course_work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for networks_work_test.TestPolicyNetwork" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,34 +64,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;networks_work_test.TestPolicyNetwork&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="course_work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;networks_work_test.TestPolicyNetwork.test_network_values_test&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for networks_work_test.TestPolicyNetwork.test_training_set_shapes" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="course_work" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;networks_work_test.TestPolicyNetwork.test_training_set_shapes&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -127,20 +81,62 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for poker_logic_test.TestItems.test_hand" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="course_work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;poker_logic_test.TestItems.test_hand&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests.networks_work_test.TestPolicyNetwork" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="course_work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.networks_work_test.TestPolicyNetwork&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in networks_work_test.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="course_work" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/networks_work_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems.test_hand" />
       <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems" />
+      <item itemvalue="Python tests.Unittests for tests.networks_work_test.TestPolicyNetwork" />
+      <item itemvalue="Python tests.Unittests in networks_work_test.py" />
       <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork" />
-      <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_training_set_shapes" />
-      <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork" />
-        <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_network_values_test" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python tests.Unittests for networks_work_test.TestPolicyNetwork.test_training_set_shapes" />
+        <item itemvalue="Python tests.Unittests in networks_work_test.py" />
+        <item itemvalue="Python tests.Unittests for tests.networks_work_test.TestPolicyNetwork" />
         <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems" />
+        <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems.test_hand" />
       </list>
     </recent_temporary>
   </component>
