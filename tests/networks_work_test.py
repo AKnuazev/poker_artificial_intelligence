@@ -24,3 +24,7 @@ class TestPolicyNetwork(unittest.TestCase):
         print(value)
         self.assertLess(value[0], 2)
         self.assertLess(0.4, value[1])
+
+
+if __name__ == "__main__":
+    unittest.main()

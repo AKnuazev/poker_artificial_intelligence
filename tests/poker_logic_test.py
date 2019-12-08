@@ -95,3 +95,7 @@ class TestItems(unittest.TestCase):
         self.assertEqual(four_comb.check_combination(board), 14 + 7, "Expected four of a kind")
         self.assertEqual(straight_flash_comb.check_combination(board), 14 + 8, "Expected straight flash")
         self.assertEqual(royal_flash_comb.check_combination(board), 14 + 9, "Expected royal flash")
+
+
+if __name__ == "__main__":
+    unittest.main()
