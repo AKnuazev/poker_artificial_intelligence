@@ -32,5 +32,28 @@ class TestPolicyNetwork(unittest.TestCase):
         self.assertLess(0.4, value[1])
 
 
+class TestValueNetwork(unittest.TestCase):
+    def test_training_set_shapes(self):
+        value_network = PolicyNetwork()
+
+        train, result = value_network.create_train()
+        self.assertEqual(train.shape, (14,))
+
+        dataset, results = value_network.create_full_dataset(10)
+        self.assertEqual(dataset.shape, (10, 14,))
+
+    def test_network_values_test(self):
+        value_network = PolicyNetwork()
+        value_network.checkpoint_abs_path = value_network.checkpoint_abs_path.replace("tests/", 'source/')
+        print(value_network.checkpoint_abs_path)
+        value_network.load(value_network.checkpoint_abs_path)
+        # policy_network.load()
+
+        value = value_network.evaluate()
+        print(value)
+        self.assertLess(value[0], 4)
+        self.assertLess(0.3, value[1])
+
+
 if __name__ == "__main__":
     unittest.main()
