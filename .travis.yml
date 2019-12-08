@@ -7,7 +7,7 @@ jobs:
     - name: "tests"
       script:
         - cd tests
-        - python poker_logic_test.py
+        - python poker_logic_test.py --cov=core .
 
 notifications:
     email: false
