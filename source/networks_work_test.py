@@ -1,6 +1,5 @@
 import unittest
-import source
-from ..source.networks.policy_network.policy_network_model import PolicyNetwork
+from .networks.policy_network.policy_network_model import PolicyNetwork
 # from source.networks.value_network.value_network_model import ValueNetwork
 # from source.poker_items import Hand
 
