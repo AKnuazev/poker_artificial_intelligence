@@ -6,8 +6,8 @@ jobs:
   include:
     - name: "tests"
       script:
-        - cd tests
-        - python poker_logic_test.py --cov=core .
+        - cd source
+        - python poker_logic_test.py
 
 notifications:
     email: false
