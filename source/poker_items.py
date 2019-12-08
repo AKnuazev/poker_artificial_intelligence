@@ -88,9 +88,14 @@ def check_full_house(hand):
                     hand.cards.remove(current_card)
 
                 if check_three_of_a_kind(hand):
+                    for i in range(2):  # place removed cards back
+                        hand.cards.append(current_card)
                     return 1
                 else:
+                    for i in range(2):  # place removed cards back
+                        hand.cards.append(current_card)
                     return 0
+
             current_card = card
             same_value_cards_counter = 1
 
@@ -99,8 +104,12 @@ def check_full_house(hand):
                 hand.cards.remove(current_card)
 
             if check_one_pair(hand):
+                for i in range(3):  # place removed cards back
+                    hand.cards.append(current_card)
                 return 1
             else:
+                for i in range(3):  # place removed cards back
+                    hand.cards.append(current_card)
                 return 0
     return 0
 
@@ -187,6 +196,9 @@ def check_two_pairs(hand):
 
 
 def check_one_pair(hand):  # returns the total_point and prints out 'One Pair' if true, if false, pass down to isHigh()
+    if len(hand.cards) == 0:
+        return 0
+
     sorted_hand = sorted(hand.cards)
 
     current_value = sorted_hand[0].value
@@ -271,7 +283,6 @@ class Deck:
 
 
 class Hand:
-
     def __init__(self):
         self.cards = []
 
@@ -305,10 +316,17 @@ class Hand:
 
     def __add__(self, second):
         temp_hand = Hand()
-        for card in self.cards:
-            temp_hand.add_card(card)
-        for card in second.cards:
-            temp_hand.add_card(card)
+
+        if len(self.cards) == 0:
+            temp_hand = second
+        elif len(second.cards) == 0:
+            temp_hand = self
+        else:
+            for card in self.cards:
+                temp_hand.add_card(card)
+            for card in second.cards:
+                temp_hand.add_card(card)
+
         return temp_hand
 
     def __str__(self):

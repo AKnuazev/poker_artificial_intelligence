@@ -16,12 +16,12 @@ from source.poker_items import Hand, Deck
 # f = open('value_network/training_1/cp.ckpt', 'w')
 
 # Value-network training
-value_network = ValueNetwork()
-value_network.start_training()
-value_network.visualize_studying_results()
+# value_network = ValueNetwork()
+# value_network.start_training()
+# value_network.visualize_studying_results()
 
 # Policy-network training
-# policy_network = PolicyNetwork()
+policy_network = PolicyNetwork()
 # policy_network.start_training()
 # policy_network.visualize_studying_results()
 
@@ -41,8 +41,8 @@ value_network.visualize_studying_results()
 #     board.add_card(deck.get_card())
 #
 # value_network.load()
-# policy_network.load()
-#
+policy_network.load()
+
 # print("Hand 1:", hand1)
 # print("Hand 2:", hand2)
 # print("Board:", board)
@@ -60,7 +60,7 @@ value_network.visualize_studying_results()
 # # ---------------------EVALUATE-----------------------
 #
 # print(value_network.evaluate())
-# print(policy_network.evaluate())
+print(policy_network.evaluate())
 
 # -------------------NUMPY EXAMPLE--------------------
 # a = [1, 2]
