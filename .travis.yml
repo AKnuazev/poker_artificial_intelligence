@@ -9,8 +9,8 @@ jobs:
   include:
     - name: "tests"
       script:
-        - python tests/poker_logic_test.py
-        - python tests/network_work_test.py
+        - python course_work/tests/poker_logic_test.py
+        - python course_work/tests/network_work_test.py
 
 notifications:
     email: false
