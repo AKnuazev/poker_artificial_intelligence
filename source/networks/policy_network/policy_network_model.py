@@ -42,11 +42,11 @@ class PolicyNetwork:
         # Compile model
         self.model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
-    def create_full_dataset(self):
+    def create_full_dataset(self, size=POLICY_DATASET_SIZE):
         training_set = []
         true_results_set = []
 
-        for _ in range(POLICY_DATASET_SIZE):
+        for _ in range(size):
             train, result = self.create_train()
             training_set.append(train)
             true_results_set.append(result)
@@ -75,11 +75,11 @@ class PolicyNetwork:
 
         round_result = 0
         if hand1.better_than(hand2, board):
-            round_result = 2                  # Player wins
+            round_result = 2  # Player wins
         elif hand1.worse_than(hand2, board):
-            round_result = 0                  # Opponent wins
+            round_result = 0  # Opponent wins
         elif hand1.equal_to(hand2, board):
-            round_result = 1                  # Draw
+            round_result = 1  # Draw
 
         values = []
         suits = []
@@ -153,18 +153,46 @@ class PolicyNetwork:
 
     def predict(self, hand, board):
         values = []
-        # suits=[]
+        suits = []
+
         for card in hand.cards:
             values.append(card.value)
-            # suits.append(card.suit)
+
+            # suits = ["♠", "♣", "♥", "♦"]  # "spades", " clubs", "hearts", "diamonds"
+            if card.suit == '0':
+                suits.append(0)
+            elif card.suit == "♠":
+                suits.append(1)
+            elif card.suit == "♣":
+                suits.append(2)
+            elif card.suit == "♥":
+                suits.append(3)
+            elif card.suit == "♦":
+                suits.append(4)
 
         for card in board.cards:
             values.append(card.value)
-            # suits.append(card.suit)
 
-        input = np.array([values])
+            # suits = ["♠", "♣", "♥", "♦"]  # "spades", " clubs", "hearts", "diamonds"
+            if card.suit == '0':
+                suits.append(0)
+            elif card.suit == "♠":
+                suits.append(1)
+            elif card.suit == "♣":
+                suits.append(2)
+            elif card.suit == "♥":
+                suits.append(3)
+            elif card.suit == "♦":
+                suits.append(4)
+
+        input = np.array([values + suits])
 
         return self.model.predict(input)
+
+    def evaluate(self):
+        x_test, y_test = self.create_full_dataset(10000)
+        value = self.model.evaluate(x_test, y_test, 1000)
+        return value
 
     def load(self):
         self.model.load_weights(self.checkpoint_path)

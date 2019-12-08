@@ -3,11 +3,23 @@ import random
 
 import source.MCTS as mcts
 from source.poker_game import Game
+from source.poker_items import Card
 import time
 import matplotlib.pyplot as plt
 from source.poker_items import Hand
 from math import sqrt, pow
 from source.settings import start_points
+
+
+class User:
+    def __init__(self, name="usual_player", points=start_points[0], hand=Hand(), board=Hand(), bet=0):
+        # Own parameters
+        self.name = name
+        self.points = points
+        self.hand = hand
+
+        # Global parameters
+        self.actions = {"pass": 0, "call": 1, "raise": 2}
 
 
 class ConsolePlayer:
@@ -44,6 +56,10 @@ class Agent:
             return self.ac
 
     def evaluate_state(self, hand, board):
+        # Fill the board
+        while (len(board.cards) != 5):
+            board.add_card(Card(0, '0'))
+
         # State evaluation by two parameters
         value = self.value_network.predict(hand, board)
         policy = self.policy_network.predict()

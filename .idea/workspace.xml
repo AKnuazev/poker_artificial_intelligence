@@ -7,17 +7,12 @@
       <change beforePath="$PROJECT_DIR$/source/game_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/game_simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/poker_items.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/poker_items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_4 — копия (2)/train_settings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_4 — копия (3)/train_settings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_4 — копия (4)/train_settings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_4 — копия (5)/train_settings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_4 — копия (6)/train_settings.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/poker_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/poker_gui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/trainings/training_1/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/trainings/training_1/cp.ckpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/poker_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/poker_game.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +60,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="TestGraph" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="graphics" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,7 +72,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/TestGraph.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/graphics.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -128,7 +123,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pokergame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="poker_gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -136,11 +131,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/uis" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/pokergame.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/uis/poker_gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,19 +166,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.pokergame" />
-      <item itemvalue="Python.TestGraph" />
       <item itemvalue="Python.poker_game" />
       <item itemvalue="Python.settings" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.poker_gui" />
+      <item itemvalue="Python.graphics" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.graphics" />
+        <item itemvalue="Python.poker_gui" />
         <item itemvalue="Python.settings" />
         <item itemvalue="Python.poker_game" />
-        <item itemvalue="Python.TestGraph" />
-        <item itemvalue="Python.pokergame" />
       </list>
     </recent_temporary>
   </component>
@@ -229,6 +224,11 @@
           <url>file://$PROJECT_DIR$/source/value_network/value_network_model.py</url>
           <line>92</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/source/main.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

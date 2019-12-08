@@ -1,15 +1,19 @@
 from source.poker_items import Card, Deck, Hand
 import numpy as np
-
+from source.settings import start_points
 
 class Round:
-    def __init__(self, dealer_turn, players_points, players_number=2, cards_in_hand_number=2, deal_amount=50,
+    def __init__(self, player1, player2, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
                  raise_size=25):
         # Round parameters
         self.player_turn = dealer_turn
         self.deal_amount = deal_amount
-        self.players_points = players_points
+        self.players_points = [player1.points, player2.points]
         self.raise_size = raise_size
+
+        # Players
+        self.player1 = player1
+        self.player2 = player2
 
         # Initialization
         self.bank = 0
@@ -29,11 +33,14 @@ class Round:
                 curr_hand.add_card(self.deck.get_card())
             self.hands.append(curr_hand)
 
+        self.player1.hand = self.hands[0]
+        self.player2.hand = self.hands[1]
+
         # Deal two first cards to board
         for i in range(2):
             self.board.add_card(self.deck.get_card())
 
-    def play(self):
+    def start(self):
         # Deal points by dealer
         self.bank = self.deal_amount
         self.curr_bet = self.deal_amount
@@ -57,6 +64,9 @@ class Round:
             self.curr_bet += self.raise_size
             self.players_points[curr_player] -= self.raise_size
 
+    def open_card(self):
+        self.board.add_card(self.deck.get_card())
+
     def summarize(self):
         if self.hands[0].better_than(self.hands[1], self.board):
             self.winner = 0
@@ -73,10 +83,8 @@ class Round:
 
 
 class Game:
-    def __init__(self, points):
+    def __init__(self, player1, player2, points=start_points):
         # Game settings
-        players_number = 2
-        cards_in_hand_number = 2
         self.points = points  # Players points at the beginning
         self.actions = [0, 1, 2, 3]
         self.actions_number = len(self.actions)
@@ -84,7 +92,9 @@ class Game:
         # Prepare items
         self.deck = Deck()  # Make deck
         self.deck.shuffle()  # Shuffle
-        self.hands = []  # Make two hands
+
+        # Initialization
+        self.player_turn = 0
 
         # Statistics
         self.winning_history = []
@@ -105,4 +115,3 @@ class GameState:
         self.hand2 = hand2
         self.board = board
         self.bet = bet
-

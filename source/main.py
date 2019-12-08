@@ -17,13 +17,13 @@ from source.poker_items import Hand, Deck
 
 # Value-network training
 value_network = ValueNetwork()
-# value_network.start_training()
-# value_network.visualize_studying_results()
+value_network.start_training()
+value_network.visualize_studying_results()
 
 # Policy-network training
-policy_network = PolicyNetwork()
-policy_network.start_training()
-policy_network.visualize_studying_results()
+# policy_network = PolicyNetwork()
+# policy_network.start_training()
+# policy_network.visualize_studying_results()
 
 # ---------------LOAD TEST ------------------------
 # deck = Deck()
@@ -56,6 +56,11 @@ policy_network.visualize_studying_results()
 # print("Policy network:")
 # print(policy_network.predict(hand1, board))
 # print(hand1.better_than(hand2, board))
+#
+# # ---------------------EVALUATE-----------------------
+#
+# print(value_network.evaluate())
+# print(policy_network.evaluate())
 
 # -------------------NUMPY EXAMPLE--------------------
 # a = [1, 2]

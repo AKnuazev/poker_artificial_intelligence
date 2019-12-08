@@ -20,7 +20,7 @@ class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "networks/value_network/trainings/training_1/cp.ckpt"
+        self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"
         self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY
@@ -39,13 +39,13 @@ class ValueNetwork:
         self.model.add(Dense(1, activation='relu'))  # from -12 to 9
 
         # Compile model
-        self.model.compile(loss='MSE', optimizer='sgd', metrics=['accuracy'])
+        self.model.compile(loss='MSE', optimizer='adam', metrics=['accuracy'])
 
-    def create_full_dataset(self):
+    def create_full_dataset(self, size=VALUE_DATASET_SIZE):
         training_set = []
         true_combinations_set = []
 
-        for _ in range(VALUE_DATASET_SIZE):
+        for _ in range(size):
             train, combination = self.create_train()
             training_set.append(train)
             true_combinations_set.append(combination)
@@ -97,7 +97,7 @@ class ValueNetwork:
     def start_training(self):
         checkpoint_callback = ModelCheckpoint(filepath=self.checkpoint_path, save_weights_only=True, verbose=1)
         training_set, true_results_set = self.create_full_dataset()
-        # true_results_set = true_results_set.reshape(10000, 1, 1)
+
         self.history = self.model.fit(training_set, true_results_set, epochs=VALUE_EPOCHS, batch_size=VALUE_BATCH_SIZE,
                                       callbacks=[checkpoint_callback])
 
@@ -154,6 +154,11 @@ class ValueNetwork:
 
         input = np.array([values+suits])
         return self.model.predict(input)
+
+    def evaluate(self):
+        x_test, y_test = self.create_full_dataset(10000)
+        value = self.model.evaluate(x_test, y_test, 1000)
+        return value
 
     def load(self):
         return self.model.load_weights(self.checkpoint_path)
