@@ -7,7 +7,7 @@ jobs:
     - name: "tests"
       script:
         - cd tests
-        - python -m unittest test_module.poker_logic_test
+        - python poker_logic_test.py
 
 notifications:
     email: false
