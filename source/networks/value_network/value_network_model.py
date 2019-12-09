@@ -21,7 +21,7 @@ class ValueNetwork:
         self.history = None
 
         self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"
-        self.checkpoint_dir = os.path.dirname(self.checkpoint_path)
+        self.checkpoint_abs_path = os.path.abspath(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY
         self.neurons_quant = VALUE_NEURONS_QUANTITY
@@ -160,5 +160,7 @@ class ValueNetwork:
         value = self.model.evaluate(x_test, y_test, 1000)
         return value
 
-    def load(self):
-        return self.model.load_weights(self.checkpoint_path)
+    def load(self, path=None):
+        if path == None:
+            path = self.checkpoint_path
+        self.model.load_weights(path)

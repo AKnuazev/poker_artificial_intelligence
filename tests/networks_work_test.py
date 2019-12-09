@@ -5,7 +5,7 @@ sys.path.append("..")
 from source.networks.policy_network.policy_network_model import PolicyNetwork
 
 
-# from source.networks.value_network.value_network_model import ValueNetwork
+from source.networks.value_network.value_network_model import ValueNetwork
 # from source.poker_items import Hand
 
 
@@ -34,7 +34,7 @@ class TestPolicyNetwork(unittest.TestCase):
 
 class TestValueNetwork(unittest.TestCase):
     def test_training_set_shapes(self):
-        value_network = PolicyNetwork()
+        value_network = ValueNetwork()
 
         train, result = value_network.create_train()
         self.assertEqual(train.shape, (14,))
@@ -43,8 +43,8 @@ class TestValueNetwork(unittest.TestCase):
         self.assertEqual(dataset.shape, (10, 14,))
 
     def test_network_values_test(self):
-        value_network = PolicyNetwork()
-        value_network.checkpoint_abs_path = value_network.checkpoint_abs_path.replace("tests/", 'source/')
+        value_network = ValueNetwork()
+        value_network.checkpoint_abs_path = value_network.checkpoint_abs_path.replace("tests\\", 'source\\')
         print(value_network.checkpoint_abs_path)
         value_network.load(value_network.checkpoint_abs_path)
         # policy_network.load()

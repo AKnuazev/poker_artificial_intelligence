@@ -20,7 +20,7 @@ class User:
         self.name = name
         self.points = points
         self.hand = hand
-
+        self.player_bet = 0
         # Global parameters
         self.actions = {"pass": 0, "call": 1, "raise": 2}
 
@@ -31,6 +31,7 @@ class ConsolePlayer:
         self.name = name
         self.points = points
         self.hand = hand
+        self.player_bet = 0
 
         # Global parameters
         self.actions = {"pass": 0, "call": 1, "raise": 2}
@@ -43,11 +44,12 @@ class Agent:
     def __init__(self, name, hand=Hand(), board=Hand(), bet=0):
         self.name = name  # Player`s name
         self.actions = {"pass": 0, "call": 1, "raise": 2}
+        self.player_bet = 0
 
         self.points = start_points[1]
         self.hand = hand  # Player`s hand
         self.board = board  # Cards on board
-        self.value_network = ValueNetwork() # Current value network model
+        self.value_network = ValueNetwork()  # Current value network model
         self.value_network.load()
         self.policy_network = PolicyNetwork()  # Current policy network model
         self.value_network.load()
@@ -64,12 +66,17 @@ class Agent:
 
     def evaluate_state(self, hand, board):
         # Fill the board
+        start_len = len(board.cards)
+
         while len(board.cards) != 5:
             board.add_card(Card(0, '0'))
 
         # State evaluation by two parameters
         value = self.value_network.predict(hand, board)
         policy = self.policy_network.predict(hand, board)
+
+        print("state: " + str(hand) + " | " + str(board))
+        print("clear values: " + str(value) + " " + str(policy))
 
         # Normalization
         if value < 15:
@@ -78,7 +85,13 @@ class Agent:
             value = pow(2, value - 14) / pow(2, 23)
         policy /= 3
 
+        print("norm values: " + str(value) + " " + str(policy))
+
         # Combination of two rates
         state_quality = policy + value
 
+        print("sum: " + str(state_quality))
+
+        while len(board.cards) != start_len:
+            board.cards.remove(Card(0, '0'))
         return state_quality

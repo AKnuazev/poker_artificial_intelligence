@@ -19,12 +19,12 @@ from source.agent import Agent, User
 # f = open('value_network/training_1/cp.ckpt', 'w')
 
 # Value-network training
-# value_network = ValueNetwork()
+value_network = ValueNetwork()
 # value_network.start_training()
 # value_network.visualize_studying_results()
 
 # Policy-network training
-# policy_network = PolicyNetwork()
+policy_network = PolicyNetwork()
 # policy_network.start_training()
 # policy_network.visualize_studying_results()
 
@@ -43,8 +43,8 @@ from source.agent import Agent, User
 # for _ in range(5):
 #     board.add_card(deck.get_card())
 #
-# value_network.load()
-# policy_network.load()
+value_network.load()
+policy_network.load()
 
 # print("Hand 1:", hand1)
 # print("Hand 2:", hand2)
@@ -78,8 +78,7 @@ from source.agent import Agent, User
 # policy_network = PolicyNetwork()
 # policy_network.load()
 
-player1 = User("human")
-player2 = Agent("AI")
-
-match = Match(player1, player2)
-match.start_match()
+# player1 = User("human")
+# player2 = Agent("AI")
+#
+# match = Match(player1, player2)

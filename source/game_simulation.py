@@ -7,6 +7,7 @@ from uis.poker_gui import Ui_MainWindow
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QMessageBox
 
 from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
@@ -23,9 +24,14 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
         self.ui.PassButton.clicked.connect(self.pass_clicked)
         self.ui.CallButton.clicked.connect(self.call_clicked)
         self.ui.RaiseButton.clicked.connect(self.raise_clicked)
-        self.ui.actionNew_game.triggered.connect(self.start_match)
+        self.ui.actionNew_game.triggered.connect(self.start_session)
+        self.ui.actionSave_report.triggered.connect(self.save_report)
+        self.ui.actionExit.triggered.connect(self.close)
 
+        self.is_session_active = 0
         self.human_act_status = 3  # 3 means no action recorded
+
+        self.report_text = []
 
     def pass_clicked(self):
         self.human_act_status = 0
@@ -39,47 +45,76 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
         self.human_act_status = 2
         self.ui.statusbar.showMessage("Human raised")
 
+    def start_session(self):
+        if self.is_session_active == 0:
+            self.is_session_active = 1
+            self.start_match()
+
+    def save_report(self):
+        file = open("reports\\report.txt", 'w')
+        file.writelines(self.report_text)
+        file.close()
+
     def start_match(self):
-        user = User("human")
-        opponent = Agent("AI", ValueNetwork, PolicyNetwork)
+        self.user = User("human")
+        self.opponent = Agent("AI", ValueNetwork, PolicyNetwork)
 
-        game = Game(user, opponent)
+        self.ui.PlayerScoreNumber.setText(str(self.user.points))
+        self.ui.OpponentScoreNumber.setText(str(self.opponent.points))
 
-        while user.points > 0 and opponent.points > 0:
-            round = Round(user, opponent, game.player_turn)
+        game = Game(self.user, self.opponent)
+
+        while self.user.points > 0 and self.opponent.points > 0:
+            round = Round([self.user, self.opponent], game.player_turn)
+            round.start()
 
             for step in range(4):
-                self.ui.PlayerScoreNumber.setText(str(user.points))
-                self.ui.OpponentScoreNumber.setText(str(opponent.points))
+                # Set some info text
+                self.ui.PlayerScoreNumber.setText(str(self.user.points))
+                self.ui.OpponentScoreNumber.setText(str(self.opponent.points))
                 self.ui.BetValueNumber.setText(str(round.curr_bet))
-                self.ui.card1_hand1.setText(str(user.hand.cards[0]))
-                self.ui.card2_hand1.setText(str(user.hand.cards[1]))
+
+                self.ui.card1_hand1.setText(str(self.user.hand.cards[0]))
+                self.ui.card2_hand1.setText(str(self.user.hand.cards[1]))
 
                 self.ui.card1_board.setText(str(round.board.cards[0]))
                 self.ui.card2_board.setText(str(round.board.cards[1]))
-                if step > 1:
+                if step > 0:
                     self.ui.card3_board.setText(str(round.board.cards[2]))
-                if step > 2:
+                if step > 1:
                     self.ui.card4_board.setText(str(round.board.cards[3]))
-                if step > 3:
+                if step > 2:
                     self.ui.card5_board.setText(str(round.board.cards[4]))
 
+                # Make steps
                 if game.player_turn == 0:
                     # Waiting for response
                     while self.human_act_status == 3:
                         QCoreApplication.processEvents()
-                        if self.human_act_status != 3:
-                            break
                         self.ui.statusbar.showMessage("waiting, now: " + str(self.human_act_status))
 
                     # Acting
                     action = self.human_act_status
                     round.take_action(0, action)
+                    self.report_text.append(str(action)+'\n')
                     self.ui.ReportText.addItem(str(action))
+                    if action == 0:
+                        self.report_text.append("AI wins"+'\n')
+                        self.ui.ReportText.addItem("AI wins")
+                        self.human_act_status = 3
+                        game.player_turn = 1
+                        break
 
-                    action = opponent.act(opponent.hand, round.board)
+                    action = self.opponent.act(self.opponent.hand, round.board)
                     round.take_action(1, action)
+                    self.report_text.append(str(action) + '\n')
                     self.ui.ReportText.addItem(str(action))
+                    if action == 0:
+                        self.report_text.append("Human wins" + '\n')
+                        self.ui.ReportText.addItem("Human wins")
+                        self.human_act_status = 3
+                        game.player_turn = 1
+                        break
 
                     # Reset act status and switch turn
                     self.human_act_status = 3
@@ -87,26 +122,47 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
 
                 elif game.player_turn == 1:
                     # Acting
-                    action = opponent.act(opponent.hand, round.board)
+                    action = self.opponent.act(self.opponent.hand, round.board)
                     round.take_action(1, action)
+                    self.report_text.append(str(action) + '\n')
                     self.ui.ReportText.addItem(str(action))
+                    if action == 0:
+                        self.report_text.append("Human wins" + '\n')
+                        self.ui.ReportText.addItem("Human wins")
+                        self.human_act_status = 3
+                        game.player_turn = 0
+                        break
 
                     # Waiting for response
                     while self.human_act_status == 3:
                         QCoreApplication.processEvents()
-                        if self.human_act_status != 3:
-                            break
                         self.ui.statusbar.showMessage("waiting, now: " + str(self.human_act_status))
 
                     action = self.human_act_status
                     round.take_action(0, action)
+                    self.report_text.append(str(action) + '\n')
                     self.ui.ReportText.addItem(str(action))
+                    if action == 0:
+                        self.report_text.append("AI wins" + '\n')
+                        self.ui.ReportText.addItem("AI wins")
+                        self.human_act_status = 3
+                        game.player_turn = 0
+                        break
 
                     # Reset act status and switch turn
                     self.human_act_status = 3
                     game.player_turn = 0
 
                 round.open_card()
+
+            self.ui.card1_hand1.clear()
+            self.ui.card2_hand1.clear()
+
+            self.ui.card1_board.clear()
+            self.ui.card2_board.clear()
+            self.ui.card3_board.clear()
+            self.ui.card4_board.clear()
+            self.ui.card5_board.clear()
 
 
 class Match():
@@ -126,5 +182,6 @@ class Match():
         # Application setup
         app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
         self.window = MainWindow()  # Создаём объект класса MainWindow
-        self.window.show()  # Показываем окно
+        self.window.showFullScreen()  # Показываем окно
+
         app.exec()

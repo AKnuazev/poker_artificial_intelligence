@@ -4,17 +4,15 @@ from source.settings import start_points
 
 
 class Round:
-    def __init__(self, player1, player2, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
+    def __init__(self, players, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
                  raise_size=25):
         # Round parameters
         self.player_turn = dealer_turn
         self.deal_amount = deal_amount
-        self.players_points = [player1.points, player2.points]
         self.raise_size = raise_size
 
         # Players
-        self.player1 = player1
-        self.player2 = player2
+        self.players = players
 
         # Initialization
         self.bank = 0
@@ -34,8 +32,8 @@ class Round:
                 curr_hand.add_card(self.deck.get_card())
             self.hands.append(curr_hand)
 
-        self.player1.hand = self.hands[0]
-        self.player2.hand = self.hands[1]
+        self.players[0].hand = self.hands[0]
+        self.players[1].hand = self.hands[1]
 
         # Deal two first cards to board
         for i in range(2):
@@ -43,45 +41,49 @@ class Round:
 
     def start(self):
         # Deal points by dealer
-        self.bank = self.deal_amount
+        self.bank = 0
+        self.bank += self.deal_amount
         self.curr_bet = self.deal_amount
-        self.players_points[self.player_turn] -= self.deal_amount
+        self.players[self.player_turn].points -= self.deal_amount
+        self.players[self.player_turn].player_bet = self.deal_amount
 
         # Deal points by second player
-        self.bank = self.deal_amount / 2
-        self.players_points[1 - self.player_turn] -= self.deal_amount / 2
+        self.bank += self.deal_amount / 2
+        self.players[1 - self.player_turn].points -= self.deal_amount / 2
+        self.players[1 - self.player_turn].player_bet = self.deal_amount
 
     def take_action(self, curr_player, action):
         # 0 - pass
         # 1 - call
         # 2 - raise
         if action == 0:
-            self.players_points[1 - curr_player] += self.bank
-            return 1 - self.player_turn, self.players_points
+            self.players[1 - curr_player].points += self.bank
+            self.winner = 1 - curr_player
         elif action == 1:
-            self.players_points[curr_player] -= self.curr_bet - self.curr_bet
+            self.players[curr_player].points -= self.curr_bet - self.players[curr_player].player_bet
+            self.players[curr_player].player_bet = self.curr_bet
         elif action == 2:
             self.bank += self.raise_size
             self.curr_bet += self.raise_size
-            self.players_points[curr_player] -= self.raise_size
+            self.players[curr_player].points += self.raise_size
+            self.players[curr_player].points -= self.raise_size
 
     def open_card(self):
-        self.board.cards.remove(Card(0, '0'))
         self.board.add_card(self.deck.get_card())
 
     def summarize(self):
         if self.hands[0].better_than(self.hands[1], self.board):
             self.winner = 0
-            self.players_points[self.winner] += self.bank
+            self.players[self.winner].points += self.bank
         elif self.hands[0].worse_than(self.hands[1], self.board):
             self.winner = 1
-            self.players_points[self.winner] += self.bank
+            self.players[self.winner].points += self.bank
         elif self.hands[0].equal_to(self.hands[1], self.board):
             self.winner = 2
-            self.players_points[0] += self.bank / 2
-            self.players_points[1] += self.bank / 2
+            self.players[0].points += self.bank / 2
+            self.players[1].points += self.bank / 2
 
-        return self.winner, self.players_points
+        return self.winner
 
 
 class Game:
