@@ -78,7 +78,7 @@ policy_network.load()
 # policy_network = PolicyNetwork()
 # policy_network.load()
 
-# player1 = User("human")
-# player2 = Agent("AI")
-#
-# match = Match(player1, player2)
+player1 = User("human")
+player2 = Agent("AI")
+
+match = Match(player1, player2)

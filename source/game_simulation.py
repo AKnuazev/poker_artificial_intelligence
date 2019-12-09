@@ -182,6 +182,6 @@ class Match():
         # Application setup
         app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
         self.window = MainWindow()  # Создаём объект класса MainWindow
-        self.window.showFullScreen()  # Показываем окно
+        self.window.show()  # Показываем окно
 
         app.exec()
