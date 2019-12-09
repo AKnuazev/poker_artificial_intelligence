@@ -40,7 +40,7 @@ class PolicyNetwork:
         self.model.add(Dense(1, activation='relu'))  # from -12 to 9
 
         # Compile model
-        self.model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
+        self.model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
 
     def create_full_dataset(self, size=POLICY_DATASET_SIZE):
         training_set = []
