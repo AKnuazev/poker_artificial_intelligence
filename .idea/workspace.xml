@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/MCTS.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/TestGraph.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/agent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uis/poker_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.py" afterDir="false" />
-    </list>
+    <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
