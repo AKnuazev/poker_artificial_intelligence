@@ -19,9 +19,9 @@ from source.agent import Agent, User
 # f = open('value_network/training_1/cp.ckpt', 'w')
 
 # Value-network training
-value_network = ValueNetwork()
-value_network.start_training()
-value_network.visualize_studying_results()
+# value_network = ValueNetwork()
+# value_network.start_training()
+# value_network.visualize_studying_results()
 
 # Policy-network training
 # policy_network = PolicyNetwork()
@@ -78,7 +78,7 @@ value_network.visualize_studying_results()
 # policy_network = PolicyNetwork()
 # policy_network.load()
 
-# player1 = User("human")
-# player2 = Agent("AI")
-#
-# match = Match(player1, player2)
+player1 = User("human")
+player2 = Agent("AI")
+
+match = Match(player1, player2)

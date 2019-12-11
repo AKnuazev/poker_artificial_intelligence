@@ -1,4 +1,4 @@
-from keras.layers.core import Dense
+from keras.layers.core import Dense, Dropout
 from keras.models import Sequential, load_model, Model
 from keras.optimizers import SGD
 from keras.callbacks import ModelCheckpoint
@@ -20,7 +20,7 @@ class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"
+        self.checkpoint_path = "networks/value_network/trainings/training_2/cp.ckpt"  # Best in 2
         self.checkpoint_abs_path = os.path.abspath(self.checkpoint_path)
 
         self.layers_quant = VALUE_HIDDEN_LAYERS_QUANTITY
@@ -34,7 +34,7 @@ class ValueNetwork:
         # Hidden layers
         for _ in range(VALUE_HIDDEN_LAYERS_QUANTITY):
             self.model.add(Dense(VALUE_NEURONS_QUANTITY, activation='relu'))
-
+            self.model.add(Dropout(0.2))
         # Output layer
         self.model.add(Dense(1, activation='relu'))  # from -12 to 9
 

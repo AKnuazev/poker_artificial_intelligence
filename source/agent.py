@@ -1,7 +1,6 @@
 import numpy as np
 import random
 
-import source.MCTS as mcts
 from source.poker_game import Game
 from source.poker_items import Card
 import time

@@ -115,31 +115,31 @@ class Ui_MainWindow(object):
         self.BoardBox.setObjectName("BoardBox")
         self.card4_board = QtWidgets.QLabel(self.BoardBox)
         self.card4_board.setGeometry(QtCore.QRect(129, 22, 31, 51))
-        self.card4_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card4_board.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card4_board.setText("")
         self.card4_board.setObjectName("card4_board")
         self.card2_board = QtWidgets.QLabel(self.BoardBox)
         self.card2_board.setGeometry(QtCore.QRect(51, 22, 31, 51))
-        self.card2_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card2_board.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card2_board.setText("")
         self.card2_board.setObjectName("card2_board")
         self.card3_board = QtWidgets.QLabel(self.BoardBox)
         self.card3_board.setGeometry(QtCore.QRect(90, 22, 31, 51))
-        self.card3_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card3_board.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card3_board.setText("")
         self.card3_board.setObjectName("card3_board")
         self.card5_board = QtWidgets.QLabel(self.BoardBox)
         self.card5_board.setGeometry(QtCore.QRect(168, 22, 31, 51))
-        self.card5_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card5_board.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card5_board.setText("")
         self.card5_board.setObjectName("card5_board")
         self.card1_board = QtWidgets.QLabel(self.BoardBox)
         self.card1_board.setGeometry(QtCore.QRect(12, 22, 31, 51))
-        self.card1_board.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card1_board.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card1_board.setText("")
         self.card1_board.setObjectName("card1_board")
@@ -150,13 +150,13 @@ class Ui_MainWindow(object):
         self.Hand2Box.setObjectName("Hand2Box")
         self.card2_hand2 = QtWidgets.QLabel(self.Hand2Box)
         self.card2_hand2.setGeometry(QtCore.QRect(49, 21, 31, 51))
-        self.card2_hand2.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card2_hand2.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card2_hand2.setText("")
         self.card2_hand2.setObjectName("card2_hand2")
         self.card1_hand2 = QtWidgets.QLabel(self.Hand2Box)
         self.card1_hand2.setGeometry(QtCore.QRect(11, 21, 31, 51))
-        self.card1_hand2.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card1_hand2.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card1_hand2.setText("")
         self.card1_hand2.setObjectName("card1_hand2")
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         self.Hand1Box.setObjectName("Hand1Box")
         self.card2_hand1 = QtWidgets.QLabel(self.Hand1Box)
         self.card2_hand1.setGeometry(QtCore.QRect(49, 21, 31, 49))
-        self.card2_hand1.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card2_hand1.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "background-color: rgb(0, 0, 98);")
         self.card2_hand1.setText("")
         self.card2_hand1.setObjectName("card2_hand1")
@@ -180,7 +180,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(9)
         self.card1_hand1.setFont(font)
-        self.card1_hand1.setStyleSheet("font: 75 12pt \"Perpetua Titling MT\";\n"
+        self.card1_hand1.setStyleSheet("font: 75 16pt \"Perpetua Titling MT\";\n"
 "border-color: rgb(170, 0, 0);\n"
 "background-color: rgb(0, 0, 98);")
         self.card1_hand1.setText("")

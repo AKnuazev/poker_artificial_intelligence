@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/MCTS.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/TestGraph.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/trainings/training_2/cp.ckpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/networks_work_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/networks_work_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uis/poker_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for networks_work_test.TestValueNetwork.test_network_values_test">
+  <component name="RunManager" selected="Python.main">
     <configuration name="game_simulation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="course_work" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,8 +152,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for networks_work_test.TestValueNetwork.test_network_values_test" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python tests.Unittests for networks_work_test.TestValueNetwork.test_network_values_test" />
         <item itemvalue="Python.game_simulation" />
         <item itemvalue="Python tests.Unittests for networks_work_test.TestValueNetwork" />
         <item itemvalue="Python tests.Unittests for poker_logic_test.TestItems.test_deck" />
