@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="" />
+    <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/files.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/namespaces.html" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/namespaces.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/all_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/all_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/files_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/files_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_0.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_2.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_3.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_4.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_5.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/namespaces_6.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/namespaces_6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/html/search/searchdata.js" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/html/search/searchdata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/files.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/files.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/namespaces.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/namespaces.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/latex/refman.tex" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/latex/refman.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/rtf/dir_69c836f63e02f9df28c3ab93087e8935.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/rtf/dir_69c836f63e02f9df28c3ab93087e8935.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/rtf/dir_8d5339734b7d6f25fd2c0df5934a8e11.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/rtf/dir_8d5339734b7d6f25fd2c0df5934a8e11.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/rtf/dir_d53a20fd579bddae482b61b3fa2c9c5e.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/rtf/dir_d53a20fd579bddae482b61b3fa2c9c5e.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/rtf/refman.rtf" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/rtf/refman.rtf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/policy_network_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/policy_network/trainings/training_1/cp.ckpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/networks/value_network/value_network_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/poker_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/poker_game.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

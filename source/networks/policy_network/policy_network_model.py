@@ -1,27 +1,28 @@
+## @package policy_network_model
+# @brief A model of a neural network policy that assesses the current state in the
+# form of a prediction of the expected outcome of a round (win / draw / loss)
+
 from keras.layers.core import Dense, Dropout
 from keras.models import Sequential, load_model, Model
-from keras.optimizers import SGD, adam
 from keras.callbacks import ModelCheckpoint
-from keras.losses import categorical_crossentropy
 from source.networks.policy_network.policy_network_settings import POLICY_HIDDEN_LAYERS_QUANTITY, \
     POLICY_NEURONS_QUANTITY
 from source.networks.policy_network.policy_network_settings import POLICY_BATCH_SIZE, POLICY_DATASET_SIZE, POLICY_EPOCHS
-
-from source.poker_game import Game, GameState
 from source.poker_items import Deck, Hand, Card
-from math import log2, pow
 
 import random
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-
+## Documentation for a class.
+#
+#  Main model class.
 class PolicyNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
 
-        self.checkpoint_path = "networks/policy_network/trainings/training_1/cp.ckpt"
+        self.checkpoint_path = "networks/policy_network/trainings/training_2/cp.ckpt"
         self.checkpoint_abs_path = os.path.abspath(self.checkpoint_path)
 
         self.layers_quant = POLICY_HIDDEN_LAYERS_QUANTITY
@@ -35,14 +36,19 @@ class PolicyNetwork:
         # Hidden layers
         for i in range(POLICY_HIDDEN_LAYERS_QUANTITY):
             self.model.add(Dense(POLICY_NEURONS_QUANTITY, activation='relu'))
+            self.model.add(Dropout(0.2))
 
         # Output layer
         self.model.add(Dense(1, activation='relu'))  # from -12 to 9
 
         # Compile model
-        self.model.compile(loss='mean_squared_error', optimizer='sgd', metrics=['accuracy'])
+        self.model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
+    ## Function that creates full dataset with fixed size
+    # @input The size of needed dataset
+    # @return Game situation (array of cards) and true value won/draw/lost
     def create_full_dataset(self, size=POLICY_DATASET_SIZE):
+
         training_set = []
         true_results_set = []
 
@@ -56,6 +62,8 @@ class PolicyNetwork:
 
         return numpy_training_set, numpy_true_results_set
 
+    ## Function that creates one random game position
+    # @return Game situation (array of cards) and true value won/draw/lost
     def create_train(self):
         train = []
         open_cards_quantity = random.randint(2, 5)
@@ -123,6 +131,7 @@ class PolicyNetwork:
         # print(numpy_train.shape)
         return numpy_train, round_result
 
+    ## Function that starts network training
     def start_training(self):
         checkpoint_callback = ModelCheckpoint(filepath=self.checkpoint_path, save_weights_only=True, verbose=1)
         training_set, true_results_set = self.create_full_dataset()
@@ -131,6 +140,8 @@ class PolicyNetwork:
                                       batch_size=POLICY_BATCH_SIZE,
                                       callbacks=[checkpoint_callback])
 
+    ## A function that visualizes the results of the last training session in the form of graphs of changes in
+    # accuracy and losses over time
     def visualize_studying_results(self):
         # print(self.history.history.keys())
         # summarize history for accuracy
@@ -151,6 +162,10 @@ class PolicyNetwork:
         plt.legend(['train', 'test'], loc='upper left')
         plt.show()
 
+    ## A function that evaluates the policy for the transferred game state
+    # @param hand: Cards in players hand
+    # @param board: Cards on board (the unknown are coded as 00)
+    # @return The policy value of the current state
     def predict(self, hand, board):
         values = []
         suits = []
@@ -189,12 +204,16 @@ class PolicyNetwork:
 
         return self.model.predict(input)
 
+    ## A function that evaluates the current version of network
+    # @return Average accuracy and loss for a random test data set
     def evaluate(self):
         x_test, y_test = self.create_full_dataset(10000)
         value = self.model.evaluate(x_test, y_test, 1000)
         return value
 
+    ## Function loading the weights of the latest trained version of the neural network policy
+    # @param path: The path to the weight data directory
     def load(self, path=None):
         if path == None:
-            path=self.checkpoint_path
+            path = self.checkpoint_path
         self.model.load_weights(path)

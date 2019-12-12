@@ -1,8 +1,11 @@
+## @package source.poker_game
+# @brief This part describes the basic gameplay, represented by two structural elements: Round and Game
+
 from source.poker_items import Card, Deck, Hand
 import numpy as np
 from source.settings import start_points
 
-
+##  Class that specifies round logic
 class Round:
     def __init__(self, players, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
                  raise_size=25):
@@ -39,6 +42,7 @@ class Round:
         for i in range(2):
             self.board.add_card(self.deck.get_card())
 
+    ## First round steps
     def start(self):
         # Deal points by dealer
         self.bank = 0
@@ -52,6 +56,8 @@ class Round:
         self.players[1 - self.player_turn].points -= self.deal_amount / 2
         self.players[1 - self.player_turn].player_bet = self.deal_amount
 
+    ## Makes changes to the playing position in accordance with the perfect action
+    # @input Player action
     def take_action(self, curr_player, action):
         # 0 - pass
         # 1 - call
@@ -68,9 +74,11 @@ class Round:
             self.players[curr_player].points += self.raise_size
             self.players[curr_player].points -= self.raise_size
 
+    ## Opens one more card on board
     def open_card(self):
         self.board.add_card(self.deck.get_card())
 
+    ## Calculates the results of round, makes changes in points
     def summarize(self):
         if self.hands[0].better_than(self.hands[1], self.board):
             self.winner = 0
@@ -85,7 +93,7 @@ class Round:
 
         return self.winner
 
-
+# Class that specifies the connection in sequence of rounds (full game)
 class Game:
     def __init__(self, player1, player2, points=start_points):
         # Game settings
@@ -104,18 +112,7 @@ class Game:
         self.winning_history = []
         self.points_history = []
 
-    def reset(self):
-        self.__init__()
-
+    ## Adds the result of the round to game
     def add_round(self, winner, players_points):
         self.winning_history.append(winner)
         self.points_history.append((players_points[0], players_points[1]))
-
-
-class GameState:
-    def __init__(self, player_turn, hand1=Hand(), hand2=Hand(), board=Hand(), bet=0):
-        self.player_turn = player_turn
-        self.hand1 = hand1
-        self.hand2 = hand2
-        self.board = board
-        self.bet = bet

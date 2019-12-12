@@ -1,14 +1,10 @@
 from keras.layers.core import Dense, Dropout
-from keras.models import Sequential, load_model, Model
-from keras.optimizers import SGD
+from keras.models import Sequential
 from keras.callbacks import ModelCheckpoint
 
 from source.networks.value_network.value_network_settings import VALUE_HIDDEN_LAYERS_QUANTITY, VALUE_NEURONS_QUANTITY
 from source.networks.value_network.value_network_settings import VALUE_BATCH_SIZE, VALUE_DATASET_SIZE, VALUE_EPOCHS
-
-from source.poker_game import Game, GameState
 from source.poker_items import Deck, Hand, Card
-from math import log2, pow
 
 import random
 import matplotlib.pyplot as plt
