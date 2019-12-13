@@ -1,7 +1,6 @@
 import numpy as np
-import random
+from random import randint
 
-from source.poker_game import Game
 from source.poker_items import Card
 import time
 import matplotlib.pyplot as plt
@@ -14,7 +13,7 @@ from source.networks.policy_network.policy_network_model import PolicyNetwork
 
 
 class User:
-    def __init__(self, name="usual_player", points=start_points[0], hand=Hand(), board=Hand(), bet=0):
+    def __init__(self, name="usual_player", points=start_points[0], hand=Hand()):
         # Own parameters
         self.name = name
         self.points = points
@@ -25,7 +24,7 @@ class User:
 
 
 class ConsolePlayer:
-    def __init__(self, name="usual_player", points=start_points[0], hand=Hand(), board=Hand(), bet=0):
+    def __init__(self, name="usual_player", points=start_points[0], hand=Hand()):
         # Own parameters
         self.name = name
         self.points = points
@@ -37,6 +36,21 @@ class ConsolePlayer:
 
     def act(self):
         return input('Enter action: ')
+
+
+class RandomPlayer:
+    def __init__(self, name="random_player", points=start_points[0], hand=Hand()):
+        # Own parameters
+        self.name = name
+        self.points = points
+        self.hand = hand
+        self.player_bet = 0
+
+        # Global parameters
+        self.actions = {"pass": 0, "call": 1, "raise": 2}
+
+    def act(self):
+        return randint(0, 2)
 
 
 class Agent:
@@ -81,8 +95,10 @@ class Agent:
         if value < 15:
             value /= pow(2, 26)
         else:
-            value = pow(2, value - 14) / pow(2, 23)
-        policy /= 3
+            value = pow(2, value - 14) / pow(2, 8) + 0.2
+        if (policy < 0.0001):
+            policy = 0.5
+        policy *= 10
 
         print("norm values: " + str(value) + " " + str(policy))
 

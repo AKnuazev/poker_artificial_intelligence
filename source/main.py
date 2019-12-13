@@ -5,8 +5,9 @@ from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
 from source.poker_items import Hand, Deck
 
-from source.game_simulation import Match
+from source.game_simulation import Match, RandomMatch
 from source.agent import Agent, User
+import random
 
 # plot example
 # y = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 17, 20, 25, 40])
@@ -19,14 +20,14 @@ from source.agent import Agent, User
 # f = open('value_network/training_1/cp.ckpt', 'w')
 
 # Value-network training
-# value_network = ValueNetwork()
+value_network = ValueNetwork()
 # value_network.start_training()
 # value_network.visualize_studying_results()
 
 # Policy-network training
 policy_network = PolicyNetwork()
-policy_network.start_training()
-policy_network.visualize_studying_results()
+# policy_network.start_training()
+# policy_network.visualize_studying_results()
 
 # ---------------LOAD TEST ------------------------
 # deck = Deck()
@@ -43,8 +44,8 @@ policy_network.visualize_studying_results()
 # for _ in range(5):
 #     board.add_card(deck.get_card())
 #
-# value_network.load()
-# policy_network.load()
+value_network.load()
+policy_network.load()
 
 # print("Hand 1:", hand1)
 # print("Hand 2:", hand2)
@@ -62,8 +63,8 @@ policy_network.visualize_studying_results()
 #
 # # ---------------------EVALUATE-----------------------
 #
-# print(value_network.evaluate())
-# print(policy_network.evaluate())
+print(value_network.evaluate())
+print(policy_network.evaluate())
 
 # -------------------NUMPY EXAMPLE--------------------
 # a = [1, 2]
@@ -82,3 +83,11 @@ policy_network.visualize_studying_results()
 # player2 = Agent("AI")
 #
 # match = Match(player1, player2)
+
+random.seed()
+match=RandomMatch()
+
+random.seed()
+match.start_match()
+match.visualize_results()
+match.save_report()

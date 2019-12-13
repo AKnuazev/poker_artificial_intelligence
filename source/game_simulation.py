@@ -1,7 +1,9 @@
 from source.poker_game import Game, Round
 import sys  # for argv transferring to QApplication
+from matplotlib import pyplot as plt
+
 from source.settings import start_points
-from source.agent import Agent, User
+from source.agent import Agent, User, RandomPlayer
 from source.settings import EPISODES, start_points
 from uis.poker_gui import Ui_MainWindow
 from PyQt5 import QtWidgets
@@ -96,10 +98,10 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
                     # Acting
                     action = self.human_act_status
                     round.take_action(0, action)
-                    self.report_text.append(str(action)+'\n')
+                    self.report_text.append(str(action) + '\n')
                     self.ui.ReportText.addItem(str(action))
                     if action == 0:
-                        self.report_text.append("AI wins"+'\n')
+                        self.report_text.append("AI wins" + '\n')
                         self.ui.ReportText.addItem("AI wins")
                         self.human_act_status = 3
                         game.player_turn = 1
@@ -155,6 +157,17 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
 
                 round.open_card()
 
+            winner = round.summarize()
+            if winner == 2:
+                self.report_text.append("Human wins" + '\n')
+                self.ui.ReportText.addItem("Human wins")
+            elif winner == 0:
+                self.report_text.append("AI wins" + '\n')
+                self.ui.ReportText.addItem("AI wins")
+            else:
+                self.report_text.append("Draw" + '\n')
+                self.ui.ReportText.addItem("Draw")
+
             self.ui.card1_hand1.clear()
             self.ui.card2_hand1.clear()
 
@@ -180,8 +193,99 @@ class Match():
         self.policy_network.load()
 
         # Application setup
-        app = QtWidgets.QApplication(sys.argv)  # Новый экземпляр QApplication
-        self.window = MainWindow()  # Создаём объект класса MainWindow
-        self.window.show()  # Показываем окно
+        app = QtWidgets.QApplication(sys.argv)  # New QApplication
+        self.window = MainWindow()  # Create MainWindow
+        self.window.show()  # Show window
 
         app.exec()
+
+
+class RandomMatch:
+    def __init__(self):
+        self.report_text = []
+        self.points_distance_history = []
+        self.pass_flag = 0
+
+        self.player = RandomPlayer("Random player")
+        self.opponent = Agent("AI", ValueNetwork, PolicyNetwork)
+
+    def start_match(self):
+        game = Game(self.player, self.opponent)
+
+        while self.player.points > 0 and self.opponent.points > 0:
+            self.points_distance_history.append(self.player.points - self.opponent.points)
+            print("Player: " + str(self.player.points) + "  Opponent: " + str(self.opponent.points))
+            round = Round([self.player, self.opponent], game.player_turn)
+            round.start()
+
+            for step in range(4):
+                # Make steps
+                if game.player_turn == 0:
+                    # Acting
+                    action = self.player.act()
+                    round.take_action(0, action)
+                    self.report_text.append("Player: " + str(action) + '\n')
+                    if action == 0:
+                        self.pass_flag = 1
+                        self.report_text.append("AI wins" + '\n')
+                        game.player_turn = 1
+                        break
+
+                    action = self.opponent.act(self.opponent.hand, round.board)
+                    round.take_action(1, action)
+                    self.report_text.append("AI: " + str(action) + '\n')
+                    if action == 0:
+                        self.pass_flag = 1
+                        self.report_text.append("Player wins" + '\n')
+                        game.player_turn = 1
+                        break
+
+                    # Switch turn
+                    game.player_turn = 1
+
+                elif game.player_turn == 1:
+                    # Acting
+                    action = self.opponent.act(self.opponent.hand, round.board)
+                    round.take_action(1, action)
+                    self.report_text.append("AI: " + str(action) + '\n')
+                    if action == 0:
+                        self.pass_flag = 1
+                        self.report_text.append("Player wins" + '\n')
+                        game.player_turn = 0
+                        break
+
+                    action = self.player.act()
+                    round.take_action(0, action)
+                    self.report_text.append("Player: " + str(action) + '\n')
+                    if action == 0:
+                        self.pass_flag = 1
+                        self.report_text.append("AI wins" + '\n')
+                        game.player_turn = 0
+                        break
+
+                    # Reset act status and switch turn
+                    game.player_turn = 0
+
+                round.open_card()
+            if self.pass_flag == 0:
+                winner = round.summarize()
+                if winner == 2:
+                    self.report_text.append("Human wins" + '\n')
+                elif winner == 0:
+                    self.report_text.append("AI wins" + '\n')
+                else:
+                    self.report_text.append("Draw" + '\n')
+            else:
+                self.pass_flag=0
+
+    def visualize_results(self):
+        plt.plot(self.points_distance_history)
+        plt.title('Points change')
+        plt.ylabel('points difference')
+        plt.xlabel('round')
+        plt.show()
+
+    def save_report(self):
+        file = open("reports\\random_report.txt", 'w')
+        file.writelines(self.report_text)
+        file.close()

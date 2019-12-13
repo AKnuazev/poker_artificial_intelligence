@@ -22,14 +22,11 @@ class TestPolicyNetwork(unittest.TestCase):
     def test_network_values_test(self):
         policy_network = PolicyNetwork()
         policy_network.checkpoint_abs_path = policy_network.checkpoint_abs_path.replace("tests/", 'source/')
-        print(policy_network.checkpoint_abs_path)
         policy_network.load(policy_network.checkpoint_abs_path)
-        # policy_network.load()
 
         value = policy_network.evaluate()
-        print(value)
-        self.assertLess(value[0], 2)
-        self.assertLess(0.4, value[1])
+        self.assertLess(value[0], 1)
+        self.assertLess(0.3, value[1])
 
 
 class TestValueNetwork(unittest.TestCase):
@@ -44,15 +41,13 @@ class TestValueNetwork(unittest.TestCase):
 
     def test_network_values_test(self):
         value_network = ValueNetwork()
-        # value_network.checkpoint_abs_path = value_network.checkpoint_abs_path.replace("tests\\", 'source\\')
-        # print(value_network.checkpoint_abs_path)
-        # value_network.load(value_network.checkpoint_abs_path)
-        # # policy_network.load()
-        #
-        # value = value_network.evaluate()
-        # print(value)
-        # self.assertLess(value[0], 4)
-        # self.assertLess(0.3, value[1])
+        value_network.checkpoint_abs_path = value_network.checkpoint_abs_path.replace("tests/", 'source/')
+        value_network.load(value_network.checkpoint_abs_path)
+
+        value = value_network.evaluate()
+        print(value)
+        self.assertLess(value[0], 3)
+        self.assertLess(0.3, value[1])
 
 
 if __name__ == "__main__":

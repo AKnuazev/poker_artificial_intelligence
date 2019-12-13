@@ -82,12 +82,12 @@ class Round:
     def summarize(self):
         if self.hands[0].better_than(self.hands[1], self.board):
             self.winner = 0
-            self.players[self.winner].points += self.bank
+            self.players[0].points += self.bank
         elif self.hands[0].worse_than(self.hands[1], self.board):
-            self.winner = 1
-            self.players[self.winner].points += self.bank
-        elif self.hands[0].equal_to(self.hands[1], self.board):
+            self.players[1].points += self.bank
             self.winner = 2
+        elif self.hands[0].equal_to(self.hands[1], self.board):
+            self.winner = 1
             self.players[0].points += self.bank / 2
             self.players[1].points += self.bank / 2
 
