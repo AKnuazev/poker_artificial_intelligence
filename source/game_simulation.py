@@ -8,14 +8,14 @@ from source.settings import EPISODES, start_points
 from uis.poker_gui import Ui_MainWindow
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QCoreApplication
-from PyQt5.QtWidgets import QLabel
-from PyQt5.QtWidgets import QMessageBox
 
 from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
 from uis import poker_gui
 
+from source.poker_items import combinations, actions
 
+## Class for main application window
 class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -35,46 +35,57 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
 
         self.report_text = []
 
+        self.pass_flag = 0
+
+    ## Response for pass-button click
     def pass_clicked(self):
-        self.human_act_status = 0
-        self.ui.statusbar.showMessage("Human passed")
+        if self.is_session_active == 1:
+            self.human_act_status = 0
+            self.ui.statusbar.showMessage("Human passed")
 
+    ## Response for call-button click
     def call_clicked(self):
-        self.human_act_status = 1
-        self.ui.statusbar.showMessage("Human called")
+        if self.is_session_active == 1:
+            self.human_act_status = 1
+            self.ui.statusbar.showMessage("Human called")
 
+    ## Response for raise-button click
     def raise_clicked(self):
-        self.human_act_status = 2
-        self.ui.statusbar.showMessage("Human raised")
+        if self.is_session_active == 1:
+            self.human_act_status = 2
+            self.ui.statusbar.showMessage("Human raised")
 
+    ## Response for StartGame-button click
     def start_session(self):
         if self.is_session_active == 0:
             self.is_session_active = 1
             self.start_match()
 
+    ## Response for StartGame-button click
     def save_report(self):
         file = open("reports\\report.txt", 'w')
         file.writelines(self.report_text)
         file.close()
 
+    ## Main function, that connects the window and the AI program
     def start_match(self):
         self.user = User("human")
         self.opponent = Agent("AI", ValueNetwork, PolicyNetwork)
 
-        self.ui.PlayerScoreNumber.setText(str(self.user.points))
-        self.ui.OpponentScoreNumber.setText(str(self.opponent.points))
-
         game = Game(self.user, self.opponent)
 
         while self.user.points > 0 and self.opponent.points > 0:
+            self.ui.PlayerScoreNumber.setText(str(self.user.points))
+            self.ui.OpponentScoreNumber.setText(str(self.opponent.points))
+
             round = Round([self.user, self.opponent], game.player_turn)
             round.start()
 
             for step in range(4):
                 # Set some info text
+                self.ui.BetValueNumber.setText(str(round.curr_bet))
                 self.ui.PlayerScoreNumber.setText(str(self.user.points))
                 self.ui.OpponentScoreNumber.setText(str(self.opponent.points))
-                self.ui.BetValueNumber.setText(str(round.curr_bet))
 
                 self.ui.card1_hand1.setText(str(self.user.hand.cards[0]))
                 self.ui.card2_hand1.setText(str(self.user.hand.cards[1]))
@@ -93,81 +104,100 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
                     # Waiting for response
                     while self.human_act_status == 3:
                         QCoreApplication.processEvents()
-                        self.ui.statusbar.showMessage("waiting, now: " + str(self.human_act_status))
+                        self.ui.statusbar.showMessage("waiting for human step...")
 
                     # Acting
                     action = self.human_act_status
                     round.take_action(0, action)
-                    self.report_text.append(str(action) + '\n')
-                    self.ui.ReportText.addItem(str(action))
+                    self.report_text.append("Human: " + str(action) + '\n')
+                    self.ui.ReportText.addItem("Human: " + actions[action])
                     if action == 0:
+                        self.pass_flag = 1
                         self.report_text.append("AI wins" + '\n')
                         self.ui.ReportText.addItem("AI wins")
                         self.human_act_status = 3
-                        game.player_turn = 1
                         break
 
                     action = self.opponent.act(self.opponent.hand, round.board)
                     round.take_action(1, action)
-                    self.report_text.append(str(action) + '\n')
-                    self.ui.ReportText.addItem(str(action))
+                    self.report_text.append("AI: " + str(action) + '\n')
+                    self.ui.ReportText.addItem("AI: " + actions[action])
                     if action == 0:
+                        self.pass_flag = 1
                         self.report_text.append("Human wins" + '\n')
                         self.ui.ReportText.addItem("Human wins")
                         self.human_act_status = 3
-                        game.player_turn = 1
                         break
 
                     # Reset act status and switch turn
                     self.human_act_status = 3
-                    game.player_turn = 1
 
                 elif game.player_turn == 1:
                     # Acting
                     action = self.opponent.act(self.opponent.hand, round.board)
                     round.take_action(1, action)
-                    self.report_text.append(str(action) + '\n')
-                    self.ui.ReportText.addItem(str(action))
+                    self.report_text.append("AI: " + str(action) + '\n')
+                    self.ui.ReportText.addItem("AI: " + actions[action])
                     if action == 0:
+                        self.pass_flag = 1
                         self.report_text.append("Human wins" + '\n')
                         self.ui.ReportText.addItem("Human wins")
                         self.human_act_status = 3
-                        game.player_turn = 0
                         break
 
                     # Waiting for response
                     while self.human_act_status == 3:
                         QCoreApplication.processEvents()
-                        self.ui.statusbar.showMessage("waiting, now: " + str(self.human_act_status))
+                        self.ui.statusbar.showMessage("waiting for human step...")
 
                     action = self.human_act_status
                     round.take_action(0, action)
-                    self.report_text.append(str(action) + '\n')
-                    self.ui.ReportText.addItem(str(action))
+                    self.report_text.append("Human: " + str(action) + '\n')
+                    self.ui.ReportText.addItem("Human: " + actions[action])
                     if action == 0:
+                        self.pass_flag = 1
                         self.report_text.append("AI wins" + '\n')
                         self.ui.ReportText.addItem("AI wins")
                         self.human_act_status = 3
-                        game.player_turn = 0
                         break
 
                     # Reset act status and switch turn
                     self.human_act_status = 3
-                    game.player_turn = 0
 
                 round.open_card()
 
-            winner = round.summarize()
-            if winner == 2:
-                self.report_text.append("Human wins" + '\n')
-                self.ui.ReportText.addItem("Human wins")
-            elif winner == 0:
-                self.report_text.append("AI wins" + '\n')
-                self.ui.ReportText.addItem("AI wins")
+            # Calculate the round results
+            self.ui.ReportText.addItem("Results:")
+            self.ui.ReportText.addItem("• Human hand: " + str(self.user.hand))
+            self.ui.ReportText.addItem("  AI hand:    " + str(self.opponent.hand))
+            self.ui.ReportText.addItem("  Board:      " + str(round.board))
+            self.ui.ReportText.addItem("• Human combination:")
+            if self.user.hand.check_combination(round.board) > 14:
+                self.ui.ReportText.addItem(combinations[self.user.hand.check_combination(round.board)])
             else:
-                self.report_text.append("Draw" + '\n')
-                self.ui.ReportText.addItem("Draw")
+                self.ui.ReportText.addItem("Oldest card:")
+            self.ui.ReportText.addItem("  AI combination:")
+            if self.opponent.hand.check_combination(round.board) > 14:
+                self.ui.ReportText.addItem(combinations[self.opponent.hand.check_combination(round.board)])
+            else:
+                self.ui.ReportText.addItem("Oldest card:")
 
+            if self.pass_flag == 0:
+                winner = round.summarize()
+                if winner == 2:
+                    self.report_text.append("Human wins" + '\n')
+                    self.ui.ReportText.addItem("Result: " + "Human wins")
+                elif winner == 0:
+                    self.report_text.append("AI wins" + '\n')
+                    self.ui.ReportText.addItem("Result: " + "AI wins")
+                else:
+                    self.report_text.append("Draw" + '\n')
+                    self.ui.ReportText.addItem("Result: " + "Draw")
+            else:
+                self.pass_flag = 0
+            self.ui.ReportText.addItem("_________________________________________")
+
+            game.player_turn = 1 - game.player_turn
             self.ui.card1_hand1.clear()
             self.ui.card2_hand1.clear()
 
@@ -177,7 +207,7 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
             self.ui.card4_board.clear()
             self.ui.card5_board.clear()
 
-
+## Class for human-AI match
 class Match():
     def __init__(self, player1, player2, curr_start_points=start_points):
         self.player1 = player1
@@ -200,6 +230,7 @@ class Match():
         app.exec()
 
 
+## Class for random_bot-AI match
 class RandomMatch:
     def __init__(self):
         self.report_text = []
@@ -270,14 +301,15 @@ class RandomMatch:
             if self.pass_flag == 0:
                 winner = round.summarize()
                 if winner == 2:
-                    self.report_text.append("Human wins" + '\n')
+                    self.report_text.append("Player wins" + '\n')
                 elif winner == 0:
                     self.report_text.append("AI wins" + '\n')
                 else:
                     self.report_text.append("Draw" + '\n')
             else:
-                self.pass_flag=0
+                self.pass_flag = 0
 
+    ## Visualize results of the match
     def visualize_results(self):
         plt.plot(self.points_distance_history)
         plt.title('Points change')
@@ -285,6 +317,7 @@ class RandomMatch:
         plt.xlabel('round')
         plt.show()
 
+    ## Saves the report about the last match
     def save_report(self):
         file = open("reports\\random_report.txt", 'w')
         file.writelines(self.report_text)

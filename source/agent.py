@@ -11,7 +11,7 @@ from source.settings import start_points
 from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
 
-
+## Class for user-player
 class User:
     def __init__(self, name="usual_player", points=start_points[0], hand=Hand()):
         # Own parameters
@@ -22,7 +22,7 @@ class User:
         # Global parameters
         self.actions = {"pass": 0, "call": 1, "raise": 2}
 
-
+## Class for console-player
 class ConsolePlayer:
     def __init__(self, name="usual_player", points=start_points[0], hand=Hand()):
         # Own parameters
@@ -37,7 +37,7 @@ class ConsolePlayer:
     def act(self):
         return input('Enter action: ')
 
-
+## Class for random-player
 class RandomPlayer:
     def __init__(self, name="random_player", points=start_points[0], hand=Hand()):
         # Own parameters
@@ -52,7 +52,7 @@ class RandomPlayer:
     def act(self):
         return randint(0, 2)
 
-
+## Class for AI-player
 class Agent:
     def __init__(self, name, hand=Hand(), board=Hand(), bet=0):
         self.name = name  # Player`s name
@@ -67,6 +67,7 @@ class Agent:
         self.policy_network = PolicyNetwork()  # Current policy network model
         self.value_network.load()
 
+    ## Makes step depending on current state
     def act(self, hand, board):
         state_value = self.evaluate_state(hand, board)
 
@@ -77,6 +78,9 @@ class Agent:
         else:
             return self.actions["call"]
 
+    ## Evaluates current state with two networks
+    #  @input Current gamestate
+    #  @return Value of current state
     def evaluate_state(self, hand, board):
         # Fill the board
         start_len = len(board.cards)

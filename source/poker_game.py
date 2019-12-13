@@ -5,6 +5,7 @@ from source.poker_items import Card, Deck, Hand
 import numpy as np
 from source.settings import start_points
 
+
 ##  Class that specifies round logic
 class Round:
     def __init__(self, players, dealer_turn, players_number=2, cards_in_hand_number=2, deal_amount=50,
@@ -66,13 +67,15 @@ class Round:
             self.players[1 - curr_player].points += self.bank
             self.winner = 1 - curr_player
         elif action == 1:
+            self.bank += self.curr_bet - self.players[curr_player].player_bet
             self.players[curr_player].points -= self.curr_bet - self.players[curr_player].player_bet
             self.players[curr_player].player_bet = self.curr_bet
         elif action == 2:
-            self.bank += self.raise_size
-            self.curr_bet += self.raise_size
-            self.players[curr_player].points += self.raise_size
-            self.players[curr_player].points -= self.raise_size
+            self.curr_bet = self.players[curr_player].player_bet + self.raise_size
+            self.bank += self.curr_bet - self.players[curr_player].player_bet
+            self.players[curr_player].points -= self.curr_bet - self.players[curr_player].player_bet
+            self.players[curr_player].player_bet=self.curr_bet
+
 
     ## Opens one more card on board
     def open_card(self):
@@ -81,11 +84,11 @@ class Round:
     ## Calculates the results of round, makes changes in points
     def summarize(self):
         if self.hands[0].better_than(self.hands[1], self.board):
-            self.winner = 0
+            self.winner = 2
             self.players[0].points += self.bank
         elif self.hands[0].worse_than(self.hands[1], self.board):
+            self.winner = 0
             self.players[1].points += self.bank
-            self.winner = 2
         elif self.hands[0].equal_to(self.hands[1], self.board):
             self.winner = 1
             self.players[0].points += self.bank / 2
@@ -93,7 +96,8 @@ class Round:
 
         return self.winner
 
-# Class that specifies the connection in sequence of rounds (full game)
+
+## Class that specifies the connection in sequence of rounds (full game)
 class Game:
     def __init__(self, player1, player2, points=start_points):
         # Game settings

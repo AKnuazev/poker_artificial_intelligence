@@ -63,8 +63,8 @@ policy_network.load()
 #
 # # ---------------------EVALUATE-----------------------
 #
-print(value_network.evaluate())
-print(policy_network.evaluate())
+# print(value_network.evaluate())
+# print(policy_network.evaluate())
 
 # -------------------NUMPY EXAMPLE--------------------
 # a = [1, 2]
@@ -79,15 +79,16 @@ print(policy_network.evaluate())
 # policy_network = PolicyNetwork()
 # policy_network.load()
 
-# player1 = User("human")
-# player2 = Agent("AI")
+player1 = User("human")
+player2 = Agent("AI")
+
+match = Match(player1, player2)
+
+# ---------------------RANDOM MATCH-------------------
+# random.seed()
+# match=RandomMatch()
 #
-# match = Match(player1, player2)
-
-random.seed()
-match=RandomMatch()
-
-random.seed()
-match.start_match()
-match.visualize_results()
-match.save_report()
+# random.seed()
+# match.start_match()
+# match.visualize_results()
+# match.save_report()

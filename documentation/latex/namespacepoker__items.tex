@@ -1,2 +1,189 @@
 \hypertarget{namespacepoker__items}{}\doxysection{poker\+\_\+items Namespace Reference}
 \label{namespacepoker__items}\index{poker\_items@{poker\_items}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpoker__items_1_1_card}{Card}}
+\begin{DoxyCompactList}\small\item\em Class that defines Card-\/object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classpoker__items_1_1_deck}{Deck}}
+\begin{DoxyCompactList}\small\item\em Class that defines Deck-\/object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classpoker__items_1_1_hand}{Hand}}
+\begin{DoxyCompactList}\small\item\em Class that defines Hand-\/object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepoker__items_ad9c1a624cee209692998adf94fc0872b}{check\+\_\+royal\+\_\+flush}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks royal flush combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_ad822cf5964a9041f13a2c57093948326}{check\+\_\+straight\+\_\+flush}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks straight combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_aaac3ae352a666b4a904f8b6160d00c05}{check\+\_\+four\+\_\+of\+\_\+a\+\_\+kind}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks four of a kind combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a27e39fe05585b81991aeae74ffab0e54}{check\+\_\+full\+\_\+house}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks full house combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a48d0e060fda72746d59c600ac0ce1eda}{check\+\_\+flush}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks flush combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_aca2a8fd4cc002146fd32d58e5e3a7ce8}{check\+\_\+straight}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks straight combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a364fc8beefb9c62843ddd2a62e14065d}{check\+\_\+three\+\_\+of\+\_\+a\+\_\+kind}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks three of a kind combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a6045eed7c95d31f5f901890535bfd71c}{check\+\_\+two\+\_\+pairs}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks two pairs combination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a12966d47448869c63b017941a7a9d51c}{check\+\_\+one\+\_\+pair}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks paircombination. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacepoker__items_a70af99cea609e77f31760efdca2bf5af}{check\+\_\+highest\+\_\+card\+\_\+value}} (hand)
+\begin{DoxyCompactList}\small\item\em Checks highest card combination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{namespacepoker__items_ad800e6e8477ac2b5a318837773ff110c}{values}} = \mbox{[}2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14\mbox{]}
+\item 
+list \mbox{\hyperlink{namespacepoker__items_a35dbdf2570700d69630e13e6feb808ba}{suits}} = \mbox{[}\char`\"{}♠\char`\"{}, \char`\"{}♣\char`\"{}, \char`\"{}♥\char`\"{}, \char`\"{}♦\char`\"{}\mbox{]}
+\item 
+int \mbox{\hyperlink{namespacepoker__items_a3e7dfa25c80d8273acf10b62d0308fc3}{players\+\_\+number}} = 2
+\item 
+dictionary \mbox{\hyperlink{namespacepoker__items_a021838a40089cf429323e4e4dc5c4908}{combinations}}
+\item 
+dictionary \mbox{\hyperlink{namespacepoker__items_aeb2e8bfff601c39bd290fccf83db6338}{actions}} = \{0\+: \char`\"{}Pass\char`\"{}, 1\+: \char`\"{}Call\char`\"{}, 2\+: \char`\"{}Raise\char`\"{}\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepoker__items_a48d0e060fda72746d59c600ac0ce1eda}\label{namespacepoker__items_a48d0e060fda72746d59c600ac0ce1eda}} 
+\index{poker\_items@{poker\_items}!check\_flush@{check\_flush}}
+\index{check\_flush@{check\_flush}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_flush()}{check\_flush()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+flush (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks flush combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_aaac3ae352a666b4a904f8b6160d00c05}\label{namespacepoker__items_aaac3ae352a666b4a904f8b6160d00c05}} 
+\index{poker\_items@{poker\_items}!check\_four\_of\_a\_kind@{check\_four\_of\_a\_kind}}
+\index{check\_four\_of\_a\_kind@{check\_four\_of\_a\_kind}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_four\_of\_a\_kind()}{check\_four\_of\_a\_kind()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+four\+\_\+of\+\_\+a\+\_\+kind (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks four of a kind combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_a27e39fe05585b81991aeae74ffab0e54}\label{namespacepoker__items_a27e39fe05585b81991aeae74ffab0e54}} 
+\index{poker\_items@{poker\_items}!check\_full\_house@{check\_full\_house}}
+\index{check\_full\_house@{check\_full\_house}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_full\_house()}{check\_full\_house()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+full\+\_\+house (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks full house combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_a70af99cea609e77f31760efdca2bf5af}\label{namespacepoker__items_a70af99cea609e77f31760efdca2bf5af}} 
+\index{poker\_items@{poker\_items}!check\_highest\_card\_value@{check\_highest\_card\_value}}
+\index{check\_highest\_card\_value@{check\_highest\_card\_value}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_highest\_card\_value()}{check\_highest\_card\_value()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+highest\+\_\+card\+\_\+value (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks highest card combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_a12966d47448869c63b017941a7a9d51c}\label{namespacepoker__items_a12966d47448869c63b017941a7a9d51c}} 
+\index{poker\_items@{poker\_items}!check\_one\_pair@{check\_one\_pair}}
+\index{check\_one\_pair@{check\_one\_pair}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_one\_pair()}{check\_one\_pair()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+one\+\_\+pair (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks paircombination. 
+
+\mbox{\Hypertarget{namespacepoker__items_ad9c1a624cee209692998adf94fc0872b}\label{namespacepoker__items_ad9c1a624cee209692998adf94fc0872b}} 
+\index{poker\_items@{poker\_items}!check\_royal\_flush@{check\_royal\_flush}}
+\index{check\_royal\_flush@{check\_royal\_flush}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_royal\_flush()}{check\_royal\_flush()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+royal\+\_\+flush (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks royal flush combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_aca2a8fd4cc002146fd32d58e5e3a7ce8}\label{namespacepoker__items_aca2a8fd4cc002146fd32d58e5e3a7ce8}} 
+\index{poker\_items@{poker\_items}!check\_straight@{check\_straight}}
+\index{check\_straight@{check\_straight}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_straight()}{check\_straight()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+straight (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks straight combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_ad822cf5964a9041f13a2c57093948326}\label{namespacepoker__items_ad822cf5964a9041f13a2c57093948326}} 
+\index{poker\_items@{poker\_items}!check\_straight\_flush@{check\_straight\_flush}}
+\index{check\_straight\_flush@{check\_straight\_flush}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_straight\_flush()}{check\_straight\_flush()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+straight\+\_\+flush (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks straight combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_a364fc8beefb9c62843ddd2a62e14065d}\label{namespacepoker__items_a364fc8beefb9c62843ddd2a62e14065d}} 
+\index{poker\_items@{poker\_items}!check\_three\_of\_a\_kind@{check\_three\_of\_a\_kind}}
+\index{check\_three\_of\_a\_kind@{check\_three\_of\_a\_kind}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_three\_of\_a\_kind()}{check\_three\_of\_a\_kind()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+three\+\_\+of\+\_\+a\+\_\+kind (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks three of a kind combination. 
+
+\mbox{\Hypertarget{namespacepoker__items_a6045eed7c95d31f5f901890535bfd71c}\label{namespacepoker__items_a6045eed7c95d31f5f901890535bfd71c}} 
+\index{poker\_items@{poker\_items}!check\_two\_pairs@{check\_two\_pairs}}
+\index{check\_two\_pairs@{check\_two\_pairs}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{check\_two\_pairs()}{check\_two\_pairs()}}
+{\footnotesize\ttfamily def poker\+\_\+items.\+check\+\_\+two\+\_\+pairs (\begin{DoxyParamCaption}\item[{}]{hand }\end{DoxyParamCaption})}
+
+
+
+Checks two pairs combination. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepoker__items_aeb2e8bfff601c39bd290fccf83db6338}\label{namespacepoker__items_aeb2e8bfff601c39bd290fccf83db6338}} 
+\index{poker\_items@{poker\_items}!actions@{actions}}
+\index{actions@{actions}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{actions}{actions}}
+{\footnotesize\ttfamily dictionary poker\+\_\+items.\+actions = \{0\+: \char`\"{}Pass\char`\"{}, 1\+: \char`\"{}Call\char`\"{}, 2\+: \char`\"{}Raise\char`\"{}\}}
+
+\mbox{\Hypertarget{namespacepoker__items_a021838a40089cf429323e4e4dc5c4908}\label{namespacepoker__items_a021838a40089cf429323e4e4dc5c4908}} 
+\index{poker\_items@{poker\_items}!combinations@{combinations}}
+\index{combinations@{combinations}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{combinations}{combinations}}
+{\footnotesize\ttfamily dictionary poker\+\_\+items.\+combinations}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{15: \textcolor{stringliteral}{"Pair"}, 16: \textcolor{stringliteral}{"Two pairs"}, 17: \textcolor{stringliteral}{"Three of a kind"}, 18: \textcolor{stringliteral}{"Straight"}, 19: \textcolor{stringliteral}{"Flush"}, 20: \textcolor{stringliteral}{"Full house"},}
+\DoxyCodeLine{2                 21: \textcolor{stringliteral}{"Four of a kind"}, 22: \textcolor{stringliteral}{"Straight flush"}, 23: \textcolor{stringliteral}{"Royal flush"}\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespacepoker__items_a3e7dfa25c80d8273acf10b62d0308fc3}\label{namespacepoker__items_a3e7dfa25c80d8273acf10b62d0308fc3}} 
+\index{poker\_items@{poker\_items}!players\_number@{players\_number}}
+\index{players\_number@{players\_number}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{players\_number}{players\_number}}
+{\footnotesize\ttfamily int poker\+\_\+items.\+players\+\_\+number = 2}
+
+\mbox{\Hypertarget{namespacepoker__items_a35dbdf2570700d69630e13e6feb808ba}\label{namespacepoker__items_a35dbdf2570700d69630e13e6feb808ba}} 
+\index{poker\_items@{poker\_items}!suits@{suits}}
+\index{suits@{suits}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{suits}{suits}}
+{\footnotesize\ttfamily list poker\+\_\+items.\+suits = \mbox{[}\char`\"{}♠\char`\"{}, \char`\"{}♣\char`\"{}, \char`\"{}♥\char`\"{}, \char`\"{}♦\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacepoker__items_ad800e6e8477ac2b5a318837773ff110c}\label{namespacepoker__items_ad800e6e8477ac2b5a318837773ff110c}} 
+\index{poker\_items@{poker\_items}!values@{values}}
+\index{values@{values}!poker\_items@{poker\_items}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily list poker\+\_\+items.\+values = \mbox{[}2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14\mbox{]}}
+

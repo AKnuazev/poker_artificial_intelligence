@@ -15,9 +15,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-## Documentation for a class.
-#
-#  Main model class.
+## Policy network model class
 class PolicyNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
@@ -211,7 +209,7 @@ class PolicyNetwork:
         value = self.model.evaluate(x_test, y_test, 1000)
         return value
 
-    ## Function loading the weights of the latest trained version of the neural network policy
+    ## Function loading the weights of the latest trained version of the neural network
     # @param path: The path to the weight data directory
     def load(self, path=None):
         if path == None:

@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-
+## Value network model class
 class ValueNetwork:
     def __init__(self):  # Later - more parameters
         self.history = None
@@ -37,6 +37,9 @@ class ValueNetwork:
         # Compile model
         self.model.compile(loss='MSE', optimizer='adam', metrics=['accuracy'])
 
+    ## Function that creates full dataset with fixed size
+    # @input The size of needed dataset
+    # @return Game situation (array of cards) and true combination
     def create_full_dataset(self, size=VALUE_DATASET_SIZE):
         training_set = []
         true_combinations_set = []
@@ -51,6 +54,8 @@ class ValueNetwork:
 
         return numpy_training_set, numpy_true_combinations_set
 
+    ## Function that creates one random game position
+    # @return Game situation (array of cards) and true combination
     def create_train(self):
         train = []
         open_cards_quantity = random.randint(2, 5)
@@ -90,6 +95,7 @@ class ValueNetwork:
         # combination = np.array([combination, 0, 0])  # Reshape
         return numpy_train, combination
 
+    ## Function that starts network training
     def start_training(self):
         checkpoint_callback = ModelCheckpoint(filepath=self.checkpoint_path, save_weights_only=True, verbose=1)
         training_set, true_results_set = self.create_full_dataset()
@@ -97,6 +103,8 @@ class ValueNetwork:
         self.history = self.model.fit(training_set, true_results_set, epochs=VALUE_EPOCHS, batch_size=VALUE_BATCH_SIZE,
                                       callbacks=[checkpoint_callback])
 
+    ## A function that visualizes the results of the last training session in the form of graphs of changes in
+    # accuracy and losses over time
     def visualize_studying_results(self):
         # print(self.history.history.keys())
         # summarize history for accuracy
@@ -117,6 +125,10 @@ class ValueNetwork:
         plt.legend(['train', 'test'], loc='upper left')
         plt.show()
 
+    ## A function that evaluates the value for the transferred game state
+    # @param hand: Cards in player hand
+    # @param board: Cards on board (the unknown are coded as 00)
+    # @return The value (expected combination) of the current state
     def predict(self, hand, board):
         values = []
         suits = []
@@ -151,11 +163,15 @@ class ValueNetwork:
         input = np.array([values + suits])
         return self.model.predict(input)
 
+    ## A function that evaluates the current version of network
+    # @return Average accuracy and loss for a random test data set
     def evaluate(self):
         x_test, y_test = self.create_full_dataset(10000)
         value = self.model.evaluate(x_test, y_test, 1000)
         return value
 
+    ## Function loading the weights of the latest trained version of the neural network
+    # @param path: The path to the weight data directory
     def load(self, path=None):
         if path == None:
             path = self.checkpoint_path

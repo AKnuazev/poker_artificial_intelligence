@@ -1,0 +1,129 @@
+\hypertarget{classagent_1_1_agent}{}\doxysection{agent.\+Agent Class Reference}
+\label{classagent_1_1_agent}\index{agent.Agent@{agent.Agent}}
+
+
+Class for A\+I-\/player.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classagent_1_1_agent_acb02c33d3a6f4499a9d1b6bc817c83e0}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classagent_1_1_agent_abc839ea296963bf56b6947e1964d92a7}{name}}, \mbox{\hyperlink{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}{hand}}=Hand(), \mbox{\hyperlink{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}{board}}=Hand(), bet=0)
+\item 
+def \mbox{\hyperlink{classagent_1_1_agent_a3b4caf5335fe10c973594d75245a6532}{act}} (self, \mbox{\hyperlink{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}{hand}}, \mbox{\hyperlink{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}{board}})
+\begin{DoxyCompactList}\small\item\em Makes step depending on current state. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classagent_1_1_agent_a4095b79cb00d8216f7ff73e044bda4ad}{evaluate\+\_\+state}} (self, \mbox{\hyperlink{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}{hand}}, \mbox{\hyperlink{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}{board}})
+\begin{DoxyCompactList}\small\item\em Evaluates current state with two networks @input Current gamestate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_abc839ea296963bf56b6947e1964d92a7}{name}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_a572d5253a0b3238f3f40ff3a480c6ee2}{actions}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_ae9e9e53f59015c569f3f83377ccfa3ed}{player\+\_\+bet}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_a6dcbb4b3c9a3f203bcf79e18da40f12b}{points}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}{hand}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}{board}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_ab22fab9d41e2ac5b6ce4a54eee2520a4}{value\+\_\+network}}
+\item 
+\mbox{\hyperlink{classagent_1_1_agent_a551fd9cc2398ec6dc29e1cd760812bc3}{policy\+\_\+network}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for A\+I-\/player. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classagent_1_1_agent_acb02c33d3a6f4499a9d1b6bc817c83e0}\label{classagent_1_1_agent_acb02c33d3a6f4499a9d1b6bc817c83e0}} 
+\index{agent.Agent@{agent.Agent}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def agent.\+Agent.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{name,  }\item[{}]{hand = {\ttfamily Hand()},  }\item[{}]{board = {\ttfamily Hand()},  }\item[{}]{bet = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classagent_1_1_agent_a3b4caf5335fe10c973594d75245a6532}\label{classagent_1_1_agent_a3b4caf5335fe10c973594d75245a6532}} 
+\index{agent.Agent@{agent.Agent}!act@{act}}
+\index{act@{act}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{act()}{act()}}
+{\footnotesize\ttfamily def agent.\+Agent.\+act (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hand,  }\item[{}]{board }\end{DoxyParamCaption})}
+
+
+
+Makes step depending on current state. 
+
+\mbox{\Hypertarget{classagent_1_1_agent_a4095b79cb00d8216f7ff73e044bda4ad}\label{classagent_1_1_agent_a4095b79cb00d8216f7ff73e044bda4ad}} 
+\index{agent.Agent@{agent.Agent}!evaluate\_state@{evaluate\_state}}
+\index{evaluate\_state@{evaluate\_state}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{evaluate\_state()}{evaluate\_state()}}
+{\footnotesize\ttfamily def agent.\+Agent.\+evaluate\+\_\+state (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hand,  }\item[{}]{board }\end{DoxyParamCaption})}
+
+
+
+Evaluates current state with two networks @input Current gamestate. 
+
+\begin{DoxyReturn}{Returns}
+Value of current state 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classagent_1_1_agent_a572d5253a0b3238f3f40ff3a480c6ee2}\label{classagent_1_1_agent_a572d5253a0b3238f3f40ff3a480c6ee2}} 
+\index{agent.Agent@{agent.Agent}!actions@{actions}}
+\index{actions@{actions}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{actions}{actions}}
+{\footnotesize\ttfamily agent.\+Agent.\+actions}
+
+\mbox{\Hypertarget{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}\label{classagent_1_1_agent_a22f34d00476559c119439df0ab1f4cbb}} 
+\index{agent.Agent@{agent.Agent}!board@{board}}
+\index{board@{board}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{board}{board}}
+{\footnotesize\ttfamily agent.\+Agent.\+board}
+
+\mbox{\Hypertarget{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}\label{classagent_1_1_agent_a38c31db8c78ec6ce95d9bd98481c689c}} 
+\index{agent.Agent@{agent.Agent}!hand@{hand}}
+\index{hand@{hand}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{hand}{hand}}
+{\footnotesize\ttfamily agent.\+Agent.\+hand}
+
+\mbox{\Hypertarget{classagent_1_1_agent_abc839ea296963bf56b6947e1964d92a7}\label{classagent_1_1_agent_abc839ea296963bf56b6947e1964d92a7}} 
+\index{agent.Agent@{agent.Agent}!name@{name}}
+\index{name@{name}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily agent.\+Agent.\+name}
+
+\mbox{\Hypertarget{classagent_1_1_agent_ae9e9e53f59015c569f3f83377ccfa3ed}\label{classagent_1_1_agent_ae9e9e53f59015c569f3f83377ccfa3ed}} 
+\index{agent.Agent@{agent.Agent}!player\_bet@{player\_bet}}
+\index{player\_bet@{player\_bet}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{player\_bet}{player\_bet}}
+{\footnotesize\ttfamily agent.\+Agent.\+player\+\_\+bet}
+
+\mbox{\Hypertarget{classagent_1_1_agent_a6dcbb4b3c9a3f203bcf79e18da40f12b}\label{classagent_1_1_agent_a6dcbb4b3c9a3f203bcf79e18da40f12b}} 
+\index{agent.Agent@{agent.Agent}!points@{points}}
+\index{points@{points}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily agent.\+Agent.\+points}
+
+\mbox{\Hypertarget{classagent_1_1_agent_a551fd9cc2398ec6dc29e1cd760812bc3}\label{classagent_1_1_agent_a551fd9cc2398ec6dc29e1cd760812bc3}} 
+\index{agent.Agent@{agent.Agent}!policy\_network@{policy\_network}}
+\index{policy\_network@{policy\_network}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{policy\_network}{policy\_network}}
+{\footnotesize\ttfamily agent.\+Agent.\+policy\+\_\+network}
+
+\mbox{\Hypertarget{classagent_1_1_agent_ab22fab9d41e2ac5b6ce4a54eee2520a4}\label{classagent_1_1_agent_ab22fab9d41e2ac5b6ce4a54eee2520a4}} 
+\index{agent.Agent@{agent.Agent}!value\_network@{value\_network}}
+\index{value\_network@{value\_network}!agent.Agent@{agent.Agent}}
+\doxysubsubsection{\texorpdfstring{value\_network}{value\_network}}
+{\footnotesize\ttfamily agent.\+Agent.\+value\+\_\+network}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Anton/\+Pycharm\+Projects/course\+\_\+work/source/\mbox{\hyperlink{agent_8py}{agent.\+py}}\end{DoxyCompactItemize}
