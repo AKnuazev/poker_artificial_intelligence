@@ -11,6 +11,7 @@ from source.settings import start_points
 from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
 
+
 ## Class for user-player
 class User:
     def __init__(self, name="usual_player", points=start_points[0], hand=Hand()):
@@ -21,6 +22,7 @@ class User:
         self.player_bet = 0
         # Global parameters
         self.actions = {"pass": 0, "call": 1, "raise": 2}
+
 
 ## Class for console-player
 class ConsolePlayer:
@@ -37,6 +39,7 @@ class ConsolePlayer:
     def act(self):
         return input('Enter action: ')
 
+
 ## Class for random-player
 class RandomPlayer:
     def __init__(self, name="random_player", points=start_points[0], hand=Hand()):
@@ -51,6 +54,7 @@ class RandomPlayer:
 
     def act(self):
         return randint(0, 2)
+
 
 ## Class for AI-player
 class Agent:
@@ -92,24 +96,24 @@ class Agent:
         value = self.value_network.predict(hand, board)
         policy = self.policy_network.predict(hand, board)
 
-        print("state: " + str(hand) + " | " + str(board))
-        print("clear values: " + str(value) + " " + str(policy))
+        # print("state: " + str(hand) + " | " + str(board))
+        # print("clear values: " + str(value) + " " + str(policy))
 
         # Normalization
         if value < 15:
             value /= pow(2, 26)
         else:
-            value = pow(2, value - 14) / pow(2, 8) + 0.2
-        if (policy < 0.0001):
-            policy = 0.5
+            value = (0.1 * pow(2, 7) + pow(2, value - 14)) / pow(2, 7)
+        if policy < 0.0001:
+            policy = 0.05
         policy *= 10
 
-        print("norm values: " + str(value) + " " + str(policy))
+        # print("norm values: " + str(value) + " " + str(policy))
 
         # Combination of two rates
         state_quality = policy + value
 
-        print("sum: " + str(state_quality))
+        # print("sum: " + str(state_quality))
 
         while len(board.cards) != start_len:
             board.cards.remove(Card(0, '0'))
