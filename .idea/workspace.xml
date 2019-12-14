@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/agent.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/gui_screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/gui_screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_1/accuracy.png" beforeDir="false" afterPath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_1/accuracy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_1/loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/training_statistics/policy_network_training/2nd_training_series/train_1/loss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_statistics/value_network_training/3rd_training_series/accuracy.png" beforeDir="false" afterPath="$PROJECT_DIR$/training_statistics/value_network_training/3rd_training_series/accuracy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training_statistics/value_network_training/3rd_training_series/loss.png" beforeDir="false" afterPath="$PROJECT_DIR$/training_statistics/value_network_training/3rd_training_series/loss.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uis/poker_gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uis/poker_gui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/uis/poker_gui.ui" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

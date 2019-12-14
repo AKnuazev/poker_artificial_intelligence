@@ -5,6 +5,14 @@
   <property name="enabled">
    <bool>true</bool>
   </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1931</width>
+    <height>960</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
     <width>1340</width>
@@ -21,8 +29,8 @@
    <widget class="QGroupBox" name="SettingsBox">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>570</y>
+      <x>390</x>
+      <y>560</y>
       <width>291</width>
       <height>191</height>
      </rect>
@@ -170,8 +178,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QGroupBox" name="ActionsBox">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>620</y>
+      <x>770</x>
+      <y>610</y>
       <width>351</width>
       <height>141</height>
      </rect>
@@ -241,8 +249,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QLabel" name="PokerTableImage">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>30</y>
+      <x>450</x>
+      <y>20</y>
       <width>1001</width>
       <height>871</height>
      </rect>
@@ -257,8 +265,8 @@ color: rgb(0, 0, 0);</string>
    <widget class="QGroupBox" name="BoardBox">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>280</y>
+      <x>840</x>
+      <y>270</y>
       <width>211</width>
       <height>91</height>
      </rect>
@@ -280,7 +288,7 @@ background-color: rgb(9, 70, 10);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -297,7 +305,7 @@ background-color: rgb(0, 0, 98);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -314,7 +322,7 @@ background-color: rgb(0, 0, 98);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -331,7 +339,7 @@ background-color: rgb(0, 0, 98);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -348,7 +356,7 @@ background-color: rgb(0, 0, 98);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -359,8 +367,8 @@ background-color: rgb(0, 0, 98);</string>
    <widget class="QGroupBox" name="Hand2Box">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>190</y>
+      <x>900</x>
+      <y>180</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -382,7 +390,7 @@ background-color: rgb(9, 70, 10);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -399,7 +407,7 @@ background-color: rgb(0, 0, 98);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -410,8 +418,8 @@ background-color: rgb(0, 0, 98);</string>
    <widget class="QGroupBox" name="Hand1Box">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>380</y>
+      <x>900</x>
+      <y>370</y>
       <width>91</width>
       <height>81</height>
      </rect>
@@ -433,7 +441,7 @@ background-color: rgb(9, 70, 10);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 background-color: rgb(0, 0, 98);</string>
      </property>
      <property name="text">
@@ -452,14 +460,14 @@ background-color: rgb(0, 0, 98);</string>
      <property name="font">
       <font>
        <family>Perpetua Titling MT</family>
-       <pointsize>12</pointsize>
+       <pointsize>16</pointsize>
        <weight>9</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 75 12pt &quot;Perpetua Titling MT&quot;;
+      <string notr="true">font: 75 16pt &quot;Perpetua Titling MT&quot;;
 border-color: rgb(170, 0, 0);
 background-color: rgb(0, 0, 98);</string>
      </property>
@@ -474,8 +482,8 @@ background-color: rgb(0, 0, 98);</string>
    <widget class="QGroupBox" name="ReportBox">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>570</y>
+      <x>1210</x>
+      <y>560</y>
       <width>271</width>
       <height>191</height>
      </rect>
@@ -549,7 +557,7 @@ border-color: beige;
   </widget>
   <action name="actionNew_game">
    <property name="text">
-    <string>New game</string>
+    <string>Start game</string>
    </property>
    <property name="toolTip">
     <string>This action ends current session and starts new game from the begining</string>
