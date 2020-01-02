@@ -9,5 +9,6 @@
 ## Реализация:
 ### Интерфейс:
 
-![Demonstration](images/inteface_demonstration.gif)
+![Demonstration](images/round_play_gif.gif)
+
 

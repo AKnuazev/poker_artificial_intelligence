@@ -4,7 +4,12 @@
     <list default="true" id="51bc9049-ebf6-42f6-b807-27b3676b6258" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/game_simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/game_simulation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Poker_table_picture.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/Poker_table_picture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/demonstration.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/inteface_demonstration.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/inteface_gif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/new_game_icon.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
