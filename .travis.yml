@@ -3,7 +3,7 @@ language: python
 python: "3.7"
 
 install:
-  - pip install tensorflow keras matplotlib
+  - pip install -r requirements.txt
 
 jobs:
   include:
