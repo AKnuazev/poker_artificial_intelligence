@@ -2,21 +2,25 @@ from source.poker_game import Game, Round
 import sys  # for argv transferring to QApplication
 from matplotlib import pyplot as plt
 
-from source.settings import start_points
 from source.agent import Agent, User, RandomPlayer
 from source.settings import EPISODES, start_points
-from uis.poker_gui import Ui_MainWindow
+
+# from uis.poker_gui import Ui_MainWindow
+# from uis import poker_gui
+from uis.poker_mini_gui import Ui_MainWindow
+from uis import poker_mini_gui
+
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import QCoreApplication
 
 from source.networks.value_network.value_network_model import ValueNetwork
 from source.networks.policy_network.policy_network_model import PolicyNetwork
-from uis import poker_gui
 
 from source.poker_items import combinations, actions
 
+
 ## Class for main application window
-class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
+class MainWindow(QtWidgets.QMainWindow, poker_mini_gui.Ui_MainWindow):  # poker_gui.Ui_MainWindow
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
@@ -206,6 +210,7 @@ class MainWindow(QtWidgets.QMainWindow, poker_gui.Ui_MainWindow):
             self.ui.card3_board.clear()
             self.ui.card4_board.clear()
             self.ui.card5_board.clear()
+
 
 ## Class for human-AI match
 class Match():

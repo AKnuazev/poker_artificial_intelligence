@@ -9,4 +9,5 @@
 ## Реализация:
 ### Интерфейс:
 
-![User Interface](images/gui_screenshot.png)
+![Demonstration](images/inteface_demonstration.gif)
+
